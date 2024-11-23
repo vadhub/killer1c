@@ -13,6 +13,10 @@ public class Main {
         frame.setSize(300, 300);
         frame.setLocationRelativeTo(null);
 
+        JFrame frameMain = new JFrame(local.getText("start"));
+        frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameMain.setExtendedState(frameMain.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+
         JPanel buttonsPanel = new JPanel();
         JPanel textPanel = new JPanel();
 
@@ -23,7 +27,11 @@ public class Main {
         textPanel.add(project);
 
         JOptionPane dialog = new JOptionPane(local.getText("app_name"));
-        stop.addActionListener(actionEvent -> dialog.createDialog(local.getText("dialog")).setVisible(true));
+        stop.addActionListener(actionEvent ->{
+            dialog.createDialog(local.getText("dialog")).setVisible(true);
+            frame.dispose();
+            frameMain.setVisible(true);
+        });
         buttonsPanel.add(stop);
         frame.add(textPanel, BorderLayout.CENTER);
         frame.add(BorderLayout.SOUTH, buttonsPanel);
