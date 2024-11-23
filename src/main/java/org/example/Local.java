@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringReader;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class Local {
 
@@ -31,13 +30,10 @@ public class Local {
     }
 
     public String getText(String name) {
-        AtomicReference<String> str = new AtomicReference<>();
-        resources.strings.forEach(i -> {
-            if (i.name.equals(name)) {
-                str.set(i.text);
-            }
-        });
-
-        return str.get();
+       return resources.strings.stream()
+                .filter(i -> i.name.equals(name))
+                .map(i -> i.text)
+                .findFirst()
+                .orElse(null);
     }
 }
