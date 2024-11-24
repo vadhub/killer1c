@@ -1,13 +1,15 @@
 package org.example;
 
+import jsyntaxpane.syntaxkits.XmlSyntaxKit;
+import org.example.ui.Menu;
+
 import javax.swing.*;
 import java.awt.*;
-
-import static org.example.Local.getLang;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Local local = new Local();
+        Menu menu = new Menu();
         JFrame frame = new JFrame(local.getText("start"));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
@@ -16,25 +18,29 @@ public class Main {
         JFrame frameMain = new JFrame(local.getText("start"));
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameMain.setExtendedState(frameMain.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+        menu.createMenu(frameMain);
 
         JPanel buttonsPanel = new JPanel();
-        JPanel textPanel = new JPanel();
+        JPanel code = new JPanel(new BorderLayout());
+        JPanel console = new JPanel();
 
         JButton stop = new JButton(local.getText("create_project"));
 
-        JTextField project = new JTextField(10);
-        project.setText(getLang());
-        textPanel.add(project);
+        JEditorPane jEditorPane = new JEditorPane();
+        jEditorPane.setEditorKit(new XmlSyntaxKit());
+        code.add(jEditorPane, BorderLayout.CENTER);
 
         JOptionPane dialog = new JOptionPane(local.getText("app_name"));
-        stop.addActionListener(actionEvent ->{
+        stop.addActionListener(actionEvent -> {
             dialog.createDialog(local.getText("dialog")).setVisible(true);
-            frame.dispose();
-            frameMain.setVisible(true);
+//            frame.dispose();
         });
+
+        frameMain.add(code, BorderLayout.CENTER);
+        frameMain.setVisible(true);
+
         buttonsPanel.add(stop);
-        frame.add(textPanel, BorderLayout.CENTER);
-        frame.add(BorderLayout.SOUTH, buttonsPanel);
-        frame.setVisible(true);
+        frame.add(buttonsPanel, BorderLayout.SOUTH);
+//        frame.setVisible(true);
     }
 }
