@@ -1,0 +1,6 @@
+<FrameLayout
+    width="500"
+    height="500">
+    <Button id="btn"
+            text="Hello killer 1c"/>
+</FrameLayout>

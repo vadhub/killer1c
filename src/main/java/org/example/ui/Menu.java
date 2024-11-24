@@ -2,16 +2,21 @@ package org.example.ui;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
 public class Menu {
 
-    public void createMenu(JFrame frame) {
+    public void createMenu(JFrame frame, ActionListener run, ActionListener destroy) {
         JMenuBar menuBar = new JMenuBar();
-        JLabel start = new JLabel(new ImageIcon("drawable/play_arrow.png"));
+        JButton start = new JButton(new ImageIcon("drawable/play_arrow.png"));
+        start.addActionListener(run);
         start.setBorder(BorderFactory.createEtchedBorder());
-        JLabel stop = new JLabel(new ImageIcon("drawable/stop_.png"));
+
+        JButton stop = new JButton(new ImageIcon("drawable/stop_.png"));
+        stop.addActionListener(destroy);
         stop.setBorder(BorderFactory.createEtchedBorder());
+
         menuBar.add(createFileMenu());
         menuBar.add(createViewMenu());
         menuBar.add(start);

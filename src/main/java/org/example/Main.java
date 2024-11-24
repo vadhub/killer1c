@@ -1,6 +1,7 @@
 package org.example;
 
 import jsyntaxpane.syntaxkits.XmlSyntaxKit;
+import org.example.data.LayoutInflator;
 import org.example.ui.LineNumberPanel;
 import org.example.ui.Menu;
 import org.example.ui.ProjectTree;
@@ -9,6 +10,10 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -23,16 +28,41 @@ public class Main {
         JFrame frameMain = new JFrame(local.getText("start"));
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameMain.setExtendedState(frameMain.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-        menu.createMenu(frameMain);
+
+        JEditorPane jEditorPane = new JEditorPane();
+
+        ActionListener run = actionEvent -> {
+            try {
+//            StringBuilder xml = new StringBuilder();
+//
+//            String fileName = "values/codetest.xml";
+//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+//            String line;
+//            while ((line = bufferedReader.readLine()) != null) {
+//                xml.append(line);
+//            }
+
+            LayoutInflator inflator = new LayoutInflator();
+            inflator.inflate(jEditorPane.getText());
+            System.out.println("Run KILL 1c");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        };
+
+        ActionListener destroy = actionEvent -> {
+            System.out.println("Destroy KILL 1c");
+        };
+
+        menu.createMenu(frameMain, run, destroy);
         frameMain.add(new JScrollPane(tree.createProjectTree()), BorderLayout.WEST);
 
         JPanel buttonsPanel = new JPanel();
         JPanel code = new JPanel(new BorderLayout());
         JPanel console = new JPanel();
 
-        JButton stop = new JButton(local.getText("create_project"));
+        JButton createProject = new JButton(local.getText("create_project"));
 
-        JEditorPane jEditorPane = new JEditorPane();
         LineNumberPanel lineNumberPanel = new LineNumberPanel(jEditorPane);
         JScrollPane jScrollPane = new JScrollPane(jEditorPane);
         jScrollPane.setRowHeaderView(lineNumberPanel);
@@ -58,7 +88,7 @@ public class Main {
         code.add(jScrollPane, BorderLayout.CENTER);
 
         JOptionPane dialog = new JOptionPane(local.getText("app_name"));
-        stop.addActionListener(actionEvent -> {
+        createProject.addActionListener(actionEvent -> {
             dialog.createDialog(local.getText("dialog")).setVisible(true);
 //            frame.dispose();
         });
@@ -66,9 +96,10 @@ public class Main {
         frameMain.add(code, BorderLayout.CENTER);
         frameMain.setVisible(true);
 
-        buttonsPanel.add(stop);
+        buttonsPanel.add(createProject);
         frame.add(buttonsPanel, BorderLayout.SOUTH);
 //        frame.setVisible(true);
+
     }
 
 

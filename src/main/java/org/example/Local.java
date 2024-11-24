@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.model.resouces.Resources;
 import org.simpleframework.xml.core.Persister;
 
 import java.io.*;

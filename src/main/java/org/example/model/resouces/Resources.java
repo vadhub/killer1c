@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model.resouces;
 
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Root;
