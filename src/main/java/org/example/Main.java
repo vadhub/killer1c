@@ -2,6 +2,7 @@ package org.example;
 
 import jsyntaxpane.syntaxkits.XmlSyntaxKit;
 import org.example.ui.Menu;
+import org.example.ui.ProjectTree;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +11,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Local local = new Local();
         Menu menu = new Menu();
+        ProjectTree tree = new ProjectTree();
         JFrame frame = new JFrame(local.getText("start"));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
@@ -19,6 +21,7 @@ public class Main {
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameMain.setExtendedState(frameMain.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         menu.createMenu(frameMain);
+        frameMain.add(new JScrollPane(tree.createProjectTree()), BorderLayout.WEST);
 
         JPanel buttonsPanel = new JPanel();
         JPanel code = new JPanel(new BorderLayout());

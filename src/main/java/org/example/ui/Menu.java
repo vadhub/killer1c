@@ -2,14 +2,20 @@ package org.example.ui;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 
 public class Menu {
 
     public void createMenu(JFrame frame) {
         JMenuBar menuBar = new JMenuBar();
-        // Добавление в главное меню выпадающих пунктов меню
+        JLabel start = new JLabel(new ImageIcon("drawable/play_arrow.png"));
+        start.setBorder(BorderFactory.createEtchedBorder());
+        JLabel stop = new JLabel(new ImageIcon("drawable/stop_.png"));
+        stop.setBorder(BorderFactory.createEtchedBorder());
         menuBar.add(createFileMenu());
         menuBar.add(createViewMenu());
+        menuBar.add(start);
+        menuBar.add(stop);
         frame.setJMenuBar(menuBar);
     }
 
@@ -17,15 +23,17 @@ public class Menu {
         // Создание выпадающего меню
         JMenu file = new JMenu("Файл");
         // Пункт меню "Открыть" с изображением
-        JMenuItem open = new JMenuItem("Открыть",
-                new ImageIcon("images/open.png"));
-        // Пункт меню из команды с выходом из программы
+        JMenuItem open = new JMenuItem("Открыть", new ImageIcon("images/open.png"));
+        JMenuItem save = new JMenuItem("Сохранить", new ImageIcon("images/open.png"));
+        save.setAccelerator(KeyStroke.getKeyStroke('S', KeyEvent.CTRL_MASK));
+        JMenuItem saveAs = new JMenuItem("Сохранить как", new ImageIcon("images/open.png"));
         JMenuItem exit = new JMenuItem(new ExitAction());
-        // Добавление к пункту меню изображения
         exit.setIcon(new ImageIcon("images/exit.png"));
-        // Добавим в меню пункта open
+
         file.add(open);
-        // Добавление разделителя
+        file.add(save);
+        file.add(saveAs);
+
         file.addSeparator();
         file.add(exit);
 
