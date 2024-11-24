@@ -1,10 +1,13 @@
 package org.example;
 
 import jsyntaxpane.syntaxkits.XmlSyntaxKit;
+import org.example.ui.LineNumberPanel;
 import org.example.ui.Menu;
 import org.example.ui.ProjectTree;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
 
 public class Main {
@@ -30,8 +33,29 @@ public class Main {
         JButton stop = new JButton(local.getText("create_project"));
 
         JEditorPane jEditorPane = new JEditorPane();
+        LineNumberPanel lineNumberPanel = new LineNumberPanel(jEditorPane);
+        JScrollPane jScrollPane = new JScrollPane(jEditorPane);
+        jScrollPane.setRowHeaderView(lineNumberPanel);
+        jScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         jEditorPane.setEditorKit(new XmlSyntaxKit());
-        code.add(jEditorPane, BorderLayout.CENTER);
+        jEditorPane.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                lineNumberPanel.repaint();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                lineNumberPanel.repaint();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                lineNumberPanel.repaint();
+            }
+        });
+
+        code.add(jScrollPane, BorderLayout.CENTER);
 
         JOptionPane dialog = new JOptionPane(local.getText("app_name"));
         stop.addActionListener(actionEvent -> {
@@ -46,4 +70,6 @@ public class Main {
         frame.add(buttonsPanel, BorderLayout.SOUTH);
 //        frame.setVisible(true);
     }
+
+
 }

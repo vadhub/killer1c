@@ -8,8 +8,8 @@ import javax.swing.tree.TreeModel;
 
 public class ProjectTree {
 
-    final String ROOT = "<html><font color=blue>Корневая запись";
-    final String[] nodes = new String[]{"<html><pre>Напитки", "Сладости", "Фрукты"};
+    final String ROOT = "<html><font color=blue>Project";
+    final String[] nodes = new String[]{"<html><pre>main", "res", "drawable"};
     final String[][] leafs = new String[][]{{"Чай", "Кофе", "Коктейль", "Сок", "Морс", "Минералка"},
             {"<html><i>Пирожное", "<html><i>Мороженое", "<html><b>Зефир", "<html><b>Халва"}, {"Груша"}};
 
