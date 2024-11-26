@@ -1,5 +1,8 @@
 package org.example.ui;
 
+import org.example.data.OpenFile;
+import org.example.data.SaveFile;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -42,7 +45,8 @@ public class Menu {
         file.addSeparator();
         file.add(exit);
 
-        open.addActionListener(arg0 -> System.out.println("ActionListener.actionPerformed : open"));
+        open.addActionListener(new OpenFile());
+        save.addActionListener(new SaveFile());
         return file;
     }
 

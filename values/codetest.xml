@@ -1,6 +1,12 @@
-<FrameLayout
-    width="500"
-    height="500">
-    <Button id="btn"
-            text="Hello killer 1c"/>
-</FrameLayout>
+<RootContainer
+        width="500"
+        height="500">
+
+    <FrameContainer>
+        <LazyList
+            repeat="5">
+            <Button id="btn"
+                text="Hello killer 1c"/>
+        </LazyList>
+    </FrameContainer>
+</RootContainer>

@@ -1,42 +1,28 @@
 package org.example.data;
 
-import org.example.model.Button;
-import org.example.model.FrameLayout;
-import org.example.model.TextView;
-import org.example.model.View;
+import org.example.model.*;
 import org.simpleframework.xml.core.Persister;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.List;
 
 public class LayoutInflator {
 
+    private JFrame frame;
+
+    public void destroyFrame() {
+        frame.dispose();
+    }
+
     public void inflate(String xml) throws Exception {
         Reader reader = new StringReader(xml);
         Persister serializer = new Persister();
-        FrameLayout frameLayout = serializer.read(FrameLayout.class, reader, false);
-        System.out.println(frameLayout);
-        createWindow(frameLayout);
-    }
-
-    public void createWindow(FrameLayout frameLayout) {
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        if (!frameLayout.width.isEmpty() && !frameLayout.height.isEmpty()) {
-            if (frameLayout.height.equals("match_parent") && frameLayout.width.equals("match_parent")) {
-                System.out.println("ok");
-                frame.setExtendedState(frame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
-            } else {
-                frame.setSize(Integer.parseInt(frameLayout.width), Integer.parseInt(frameLayout.height));
-                frame.setLocationRelativeTo(null);
-            }
-        }
-
-        frame.add(createViews(frameLayout.views), BorderLayout.NORTH);
+        RootContainer container = serializer.read(RootContainer.class, reader, false);
+        System.out.println(container);
+        frame = createRoot(container);
+        frame.add(createContainer(container.container));
         frame.setVisible(true);
     }
 
@@ -76,5 +62,56 @@ public class LayoutInflator {
         });
 
         return jPanel;
+    }
+
+    public JPanel createList(LazyList list) {
+        JPanel jPanel = createPanel();
+        int repeat = Integer.parseInt(list.repeat);
+
+        for (int i = 0; i <= repeat; i++) {
+            jPanel.add(createViews(list.views));
+        }
+
+        return jPanel;
+    }
+
+    public JPanel createContainers(List<Container> containers) {
+        JPanel jPanel = createPanel();
+        for (Container container : containers) {
+            jPanel.add(createContainer(container));
+        }
+        return jPanel;
+    }
+
+    public JPanel createContainer(Container container) {
+        JPanel jPanel = createPanel();
+
+        if (container instanceof LazyList) {
+            return createList((LazyList) container);
+        } else {
+            jPanel.add(createViews(container.views));
+        }
+
+        if (container.containers != null) {
+            return createContainers(container.containers);
+        }
+
+        return jPanel;
+    }
+
+    public JFrame createRoot(RootContainer rootContainer) {
+        JFrame frame = new JFrame();
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        if (rootContainer.container != null) {
+            if (rootContainer.width != null && rootContainer.height != null) {
+                if ("match_parent".equals(rootContainer.container.width) && "match_parent".equals(rootContainer.container.height)) {
+                    frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                } else {
+                    frame.setSize(Integer.parseInt(rootContainer.width), Integer.parseInt(rootContainer.height));
+                    frame.setLocationRelativeTo(null);
+                }
+            }
+        }
+        return frame;
     }
 }

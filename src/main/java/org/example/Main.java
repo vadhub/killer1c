@@ -30,7 +30,7 @@ public class Main {
         frameMain.setExtendedState(frameMain.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 
         JEditorPane jEditorPane = new JEditorPane();
-
+        LayoutInflator inflator = new LayoutInflator();
         ActionListener run = actionEvent -> {
             try {
 //            StringBuilder xml = new StringBuilder();
@@ -42,7 +42,6 @@ public class Main {
 //                xml.append(line);
 //            }
 
-            LayoutInflator inflator = new LayoutInflator();
             inflator.inflate(jEditorPane.getText());
             System.out.println("Run KILL 1c");
             } catch (Exception e) {
@@ -51,6 +50,7 @@ public class Main {
         };
 
         ActionListener destroy = actionEvent -> {
+            inflator.destroyFrame();
             System.out.println("Destroy KILL 1c");
         };
 
