@@ -13,4 +13,10 @@ public class View {
 
     @Attribute(required = false)
     public String background;
+
+    @Attribute(required = false)
+    public String width;
+
+    @Attribute(required = false)
+    public String height;
 }
