@@ -1,17 +1,17 @@
 package org.example.model;
 
-import org.simpleframework.xml.Attribute;
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementUnion;
-import org.simpleframework.xml.Root;
+import org.simpleframework.xml.*;
+
+import java.util.List;
 
 @Root
 public class RootContainer {
-    @ElementUnion(
-            {@Element(name = "LazyList", type = LazyList.class, required = false),
-            @Element(name = "FrameContainer", type = FrameContainer.class, required = false)}
-    )
-    public Container container;
+
+    @ElementListUnion({
+            @ElementList(inline = true, entry = "TextView", type = TextView.class, required = false),
+            @ElementList(inline = true, entry = "Button", type = Button.class, required = false)
+    })
+    public List<View> views;
 
     @Attribute(required = false)
     public String width;
@@ -22,7 +22,9 @@ public class RootContainer {
     @Override
     public String toString() {
         return "RootContainer{" +
-                "container=" + container +
+                "views=" + views +
+                ", width='" + width + '\'' +
+                ", height='" + height + '\'' +
                 '}';
     }
 }

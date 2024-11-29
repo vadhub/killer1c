@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
 
 public class Menu {
 
-    public void createMenu(JFrame frame, ActionListener run, ActionListener destroy) {
+    public void createMenu(JFrame frame, ActionListener run, ActionListener destroy, OpenFile openFile, SaveFile saveFile) {
         JMenuBar menuBar = new JMenuBar();
         JButton start = new JButton(new ImageIcon("drawable/play_arrow.png"));
         start.addActionListener(run);
@@ -20,14 +20,14 @@ public class Menu {
         stop.addActionListener(destroy);
         stop.setBorder(BorderFactory.createEtchedBorder());
 
-        menuBar.add(createFileMenu());
+        menuBar.add(createFileMenu(openFile, saveFile));
         menuBar.add(createViewMenu());
         menuBar.add(start);
         menuBar.add(stop);
         frame.setJMenuBar(menuBar);
     }
 
-    private JMenu createFileMenu() {
+    private JMenu createFileMenu(OpenFile openFile, SaveFile saveFile) {
         // Создание выпадающего меню
         JMenu file = new JMenu("Файл");
         // Пункт меню "Открыть" с изображением
@@ -45,8 +45,8 @@ public class Menu {
         file.addSeparator();
         file.add(exit);
 
-        open.addActionListener(new OpenFile());
-        save.addActionListener(new SaveFile());
+        open.addActionListener(openFile);
+        save.addActionListener(saveFile);
         return file;
     }
 

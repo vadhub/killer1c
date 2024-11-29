@@ -2,6 +2,8 @@ package org.example;
 
 import jsyntaxpane.syntaxkits.XmlSyntaxKit;
 import org.example.data.LayoutInflator;
+import org.example.data.OpenFile;
+import org.example.data.SaveFile;
 import org.example.ui.LineNumberPanel;
 import org.example.ui.Menu;
 import org.example.ui.ProjectTree;
@@ -11,12 +13,12 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+
+        SaveFile saveFile = new SaveFile("/home/vadim/test____", "config.xml");
+        OpenFile openFile = new OpenFile();
         Local local = new Local();
         Menu menu = new Menu();
         ProjectTree tree = new ProjectTree();
@@ -33,15 +35,6 @@ public class Main {
         LayoutInflator inflator = new LayoutInflator();
         ActionListener run = actionEvent -> {
             try {
-//            StringBuilder xml = new StringBuilder();
-//
-//            String fileName = "values/codetest.xml";
-//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
-//            String line;
-//            while ((line = bufferedReader.readLine()) != null) {
-//                xml.append(line);
-//            }
-
             inflator.inflate(jEditorPane.getText());
             System.out.println("Run KILL 1c");
             } catch (Exception e) {
@@ -54,7 +47,7 @@ public class Main {
             System.out.println("Destroy KILL 1c");
         };
 
-        menu.createMenu(frameMain, run, destroy);
+        menu.createMenu(frameMain, run, destroy, openFile, saveFile);
         frameMain.add(new JScrollPane(tree.createProjectTree()), BorderLayout.WEST);
 
         JPanel buttonsPanel = new JPanel();
@@ -72,11 +65,13 @@ public class Main {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 lineNumberPanel.repaint();
+                saveFile.setContent(jEditorPane.getText());
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
                 lineNumberPanel.repaint();
+                saveFile.setContent(jEditorPane.getText());
             }
 
             @Override

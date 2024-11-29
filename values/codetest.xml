@@ -1,12 +1,5 @@
-<RootContainer
-        width="500"
-        height="500">
-
-    <FrameContainer>
-        <LazyList
-            repeat="5">
-            <Button id="btn"
-                text="Hello killer 1c"/>
-        </LazyList>
-    </FrameContainer>
+<RootContainer width="500" height="500">
+    <TextView id="tv1" text="hello"/>
+    <TextView id="tv2" text="world"/>
+    <Button id="btn" text="concat"/>
 </RootContainer>

@@ -22,7 +22,7 @@ public class LayoutInflator {
         RootContainer container = serializer.read(RootContainer.class, reader, false);
         System.out.println(container);
         frame = createRoot(container);
-        frame.add(createContainer(container.container));
+        frame.add(createViews(container.views));
         frame.setVisible(true);
     }
 
@@ -60,7 +60,6 @@ public class LayoutInflator {
                 jPanel.add(createTextView((TextView) it));
             }
         });
-
         return jPanel;
     }
 
@@ -102,16 +101,14 @@ public class LayoutInflator {
     public JFrame createRoot(RootContainer rootContainer) {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        if (rootContainer.container != null) {
             if (rootContainer.width != null && rootContainer.height != null) {
-                if ("match_parent".equals(rootContainer.container.width) && "match_parent".equals(rootContainer.container.height)) {
+                if ("match_parent".equals(rootContainer.width) && "match_parent".equals(rootContainer.height)) {
                     frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                 } else {
                     frame.setSize(Integer.parseInt(rootContainer.width), Integer.parseInt(rootContainer.height));
                     frame.setLocationRelativeTo(null);
                 }
             }
-        }
         return frame;
     }
 }
