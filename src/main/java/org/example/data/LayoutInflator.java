@@ -6,11 +6,13 @@ import org.simpleframework.xml.core.Persister;
 import javax.swing.*;
 import java.io.Reader;
 import java.io.StringReader;
+import java.util.HashMap;
 import java.util.List;
 
 public class LayoutInflator {
 
     private JFrame frame;
+    private HashMap<String, JComponent> components = new HashMap<>();
 
     public void destroyFrame() {
         frame.dispose();
@@ -26,24 +28,6 @@ public class LayoutInflator {
         frame.setVisible(true);
     }
 
-    public JButton createButton(Button button) {
-        JButton jButton = new JButton(button.text);
-        return jButton;
-    }
-
-    public JTextField createTextView(TextView textView) {
-        JTextField jTextField = null;
-        if (textView.width != null) {
-            if (!textView.width.isEmpty()) {
-                jTextField = new JTextField(Integer.parseInt(textView.width));
-            }
-        } else {
-            jTextField = new JTextField();
-        }
-        jTextField.setText(textView.text);
-        return jTextField;
-    }
-
     public JPanel createPanel() {
         JPanel jPanel = new JPanel();
         return jPanel;
@@ -54,23 +38,16 @@ public class LayoutInflator {
         views.forEach(it -> {
             if (it instanceof Button) {
                 System.out.println("create button");
-                jPanel.add(createButton((Button) it));
+                JComponent component = ((Button) it).createButton();
+                jPanel.add(component);
+                components.put(it.id, component);
             } else if (it instanceof TextView) {
                 System.out.println("create  text view");
-                jPanel.add(createTextView((TextView) it));
+                JComponent component = ((TextView) it).createTextView();
+                jPanel.add(component);
+                components.put(it.id, component);
             }
         });
-        return jPanel;
-    }
-
-    public JPanel createList(LazyList list) {
-        JPanel jPanel = createPanel();
-        int repeat = Integer.parseInt(list.repeat);
-
-        for (int i = 0; i <= repeat; i++) {
-            jPanel.add(createViews(list.views));
-        }
-
         return jPanel;
     }
 
@@ -86,7 +63,7 @@ public class LayoutInflator {
         JPanel jPanel = createPanel();
 
         if (container instanceof LazyList) {
-            return createList((LazyList) container);
+            return ((LazyList) container).createList(() -> {});
         } else {
             jPanel.add(createViews(container.views));
         }
@@ -110,5 +87,9 @@ public class LayoutInflator {
                 }
             }
         return frame;
+    }
+
+    public JComponent getElementById(String id) {
+        return components.get(id);
     }
 }

@@ -4,9 +4,10 @@ import jsyntaxpane.syntaxkits.XmlSyntaxKit;
 import org.example.data.LayoutInflator;
 import org.example.data.OpenFile;
 import org.example.data.SaveFile;
+import org.example.model.RunPythonFromJava;
 import org.example.ui.LineNumberPanel;
 import org.example.ui.Menu;
-import org.example.ui.ProjectTree;
+import org.example.ui.ProjectTree2;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -21,7 +22,6 @@ public class Main {
         OpenFile openFile = new OpenFile();
         Local local = new Local();
         Menu menu = new Menu();
-        ProjectTree tree = new ProjectTree();
         JFrame frame = new JFrame(local.getText("start"));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 300);
@@ -35,8 +35,9 @@ public class Main {
         LayoutInflator inflator = new LayoutInflator();
         ActionListener run = actionEvent -> {
             try {
-            inflator.inflate(jEditorPane.getText());
-            System.out.println("Run KILL 1c");
+                RunPythonFromJava.run(jEditorPane.getText());
+                //inflator.inflate(jEditorPane.getText());
+                System.out.println("Run KILL 1c");
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -48,8 +49,7 @@ public class Main {
         };
 
         menu.createMenu(frameMain, run, destroy, openFile, saveFile);
-        frameMain.add(new JScrollPane(tree.createProjectTree()), BorderLayout.WEST);
-
+        frameMain.add(new ProjectTree2().projectTree2Create("/home/vadim/test____", jEditorPane::setText), BorderLayout.WEST);
         JPanel buttonsPanel = new JPanel();
         JPanel code = new JPanel(new BorderLayout());
         JPanel console = new JPanel();

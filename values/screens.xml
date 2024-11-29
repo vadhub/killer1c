@@ -1,0 +1,5 @@
+<menu>
+    <menuItem id="main" text="Main"/>
+    <menuItem id="govno_1c" text="1c govno"/>
+    <menuItem id="game" text="Game"/>
+</menu>
