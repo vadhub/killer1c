@@ -1,5 +1,7 @@
 package org.example.ui;
 
+import org.example.data.ReadFile;
+
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
@@ -8,7 +10,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.function.Consumer;
 
 
@@ -29,15 +30,10 @@ public class ProjectTree2 {
                         Object node = path.getLastPathComponent();
                         if (!isPackageNode(node)) {
                             try {
-                                StringBuilder sb = new StringBuilder();
-                                Files.readAllLines(new File(pathname+File.separator+node).toPath()).forEach(it -> {
-                                    sb.append(it).append('\n');
-                                });
-                                file.accept(sb.toString());
+                                file.accept(ReadFile.read(pathname+File.separator+node));
                             } catch (IOException ex) {
                                 throw new RuntimeException(ex);
                             }
-                            //"/home/vadim/test____"
                         }
                     }
                 }

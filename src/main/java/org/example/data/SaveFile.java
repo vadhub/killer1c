@@ -1,11 +1,9 @@
 package org.example.data;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
-public class SaveFile implements ActionListener {
+public class SaveFile {
 
     private String filepath;
     private String directory;
@@ -18,14 +16,20 @@ public class SaveFile implements ActionListener {
         new File(directory).mkdir();
     }
 
-    @Override
-    public void actionPerformed(ActionEvent actionEvent) {
-        saveFile();
-    }
-
     public void saveFile() {
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(
                 new FileOutputStream(directory + File.separator + filepath), StandardCharsets.UTF_8))) {
+            writer.write(content);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void saveFile(String directory, String filename, String content) {
+        new File(directory).mkdir();
+
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(directory + File.separator + filename), StandardCharsets.UTF_8))) {
             writer.write(content);
         } catch (IOException e) {
             throw new RuntimeException(e);

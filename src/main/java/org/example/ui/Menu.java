@@ -46,7 +46,9 @@ public class Menu {
         file.add(exit);
 
         open.addActionListener(openFile);
-        save.addActionListener(saveFile);
+        save.addActionListener(actionEvent -> {
+            saveFile.saveFile();
+        });
         return file;
     }
 

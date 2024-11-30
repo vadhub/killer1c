@@ -1,4 +1,4 @@
-package org.example.model.resouces;
+package org.example.model.config.resouces;
 
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Root;
