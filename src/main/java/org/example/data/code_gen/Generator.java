@@ -130,7 +130,7 @@ public class Generator {
         return code.toString();
     }
 
-    public static void main(String[] args) {
+    public static String build() {
         String namePanel = "panel";
         String nameTextView = "tv1";
         String nameButton = "button";
@@ -152,7 +152,7 @@ public class Generator {
                 g.getGeneratedCode()
         );
 
-        System.out.println(g.getGeneratedCode());
+        return g.getGeneratedCode();
     }
 
 }

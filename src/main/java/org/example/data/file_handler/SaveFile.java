@@ -2,6 +2,7 @@ package org.example.data.file_handler;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Paths;
 
 public class SaveFile {
 
@@ -26,13 +27,24 @@ public class SaveFile {
     }
 
     public static void saveFile(String directory, String filename, String content) {
-        new File(directory).mkdir();
+        // Создание директории, включая все родительские директории, если они не существуют
+        File dir = new File(directory);
+        if (!dir.exists()) {
+            boolean created = dir.mkdirs();
+            if (!created) {
+                throw new RuntimeException("Не удалось создать директорию: " + directory);
+            }
+        }
 
-        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(directory + File.separator + filename, false), StandardCharsets.UTF_8))) {
+        // Формирование полного пути к файлу
+        File file = Paths.get(directory, filename).toFile();
+
+        // Запись содержимого в файл
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(file, false), StandardCharsets.UTF_8))) {
             writer.write(content);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Ошибка при записи в файл: " + file.getAbsolutePath(), e);
         }
     }
 
