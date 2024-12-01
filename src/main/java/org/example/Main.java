@@ -40,8 +40,8 @@ public class Main {
             System.out.println("Destroy KILL 1c");
         };
 
-        menu.createMenu(frameMain, run, destroy, openFile, saveFile);
-        frameMain.add(new ProjectTree2().projectTree2Create("/home/vadim/test____", codeEditor::setText), BorderLayout.WEST);
+        menu.createMenu(frameMain, run, destroy, openFile, saveFile, configurator);
+        frameMain.add(new ProjectTree2().projectTree2Create(Context.currentRootDirectory, codeEditor::setText), BorderLayout.WEST);
         frameMain.add(codeEditor.createPanel(), BorderLayout.CENTER);
         frameMain.setVisible(true);
 

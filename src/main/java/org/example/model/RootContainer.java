@@ -19,6 +19,12 @@ public class RootContainer {
     @Attribute(required = false)
     public String height;
 
+    public RootContainer(List<View> views, String width, String height) {
+        this.views = views;
+        this.width = width;
+        this.height = height;
+    }
+
     @Override
     public String toString() {
         return "RootContainer{" +

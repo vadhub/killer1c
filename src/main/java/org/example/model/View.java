@@ -19,4 +19,18 @@ public class View {
 
     @Attribute(required = false)
     public String height;
+
+    public View(String id, String text, String width) {
+        this.id = id;
+        this.text = text;
+        this.width = width;
+    }
+
+    public View(String id, String text) {
+        this.id = id;
+        this.text = text;
+    }
+
+    public View() {
+    }
 }

@@ -16,4 +16,7 @@ public class Config {
         this.currentRootDirectory = currentRootDirectory;
         this.currentProject = currentProject;
     }
+
+    public Config() {
+    }
 }

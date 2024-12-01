@@ -29,7 +29,7 @@ public class SaveFile {
         new File(directory).mkdir();
 
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(
-                new FileOutputStream(directory + File.separator + filename), StandardCharsets.UTF_8))) {
+                new FileOutputStream(directory + File.separator + filename, false), StandardCharsets.UTF_8))) {
             writer.write(content);
         } catch (IOException e) {
             throw new RuntimeException(e);

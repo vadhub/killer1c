@@ -30,4 +30,9 @@ public class TextView extends View {
         jTextField.setText(text);
         return jTextField;
     }
+
+    public TextView(String id, String text, String width, String type) {
+        super(id, text, width);
+        this.type = type;
+    }
 }

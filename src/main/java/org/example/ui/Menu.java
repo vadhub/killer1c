@@ -1,5 +1,6 @@
 package org.example.ui;
 
+import org.example.data.Configurator;
 import org.example.data.OpenFile;
 import org.example.data.SaveFile;
 
@@ -10,7 +11,7 @@ import java.awt.event.KeyEvent;
 
 public class Menu {
 
-    public void createMenu(JFrame frame, ActionListener run, ActionListener destroy, OpenFile openFile, SaveFile saveFile) {
+    public void createMenu(JFrame frame, ActionListener run, ActionListener destroy, OpenFile openFile, SaveFile saveFile, Configurator configurator) {
         JMenuBar menuBar = new JMenuBar();
         JButton start = new JButton(new ImageIcon("drawable/play_arrow.png"));
         start.addActionListener(run);
@@ -20,17 +21,18 @@ public class Menu {
         stop.addActionListener(destroy);
         stop.setBorder(BorderFactory.createEtchedBorder());
 
-        menuBar.add(createFileMenu(openFile, saveFile));
+        menuBar.add(createFileMenu(openFile, saveFile, configurator));
         menuBar.add(createViewMenu());
         menuBar.add(start);
         menuBar.add(stop);
         frame.setJMenuBar(menuBar);
     }
 
-    private JMenu createFileMenu(OpenFile openFile, SaveFile saveFile) {
+    private JMenu createFileMenu(OpenFile openFile, SaveFile saveFile, Configurator configurator) {
         // Создание выпадающего меню
         JMenu file = new JMenu("Файл");
         // Пункт меню "Открыть" с изображением
+        JMenuItem newProject = new JMenuItem("Новый проект", new ImageIcon("images/open.png"));
         JMenuItem open = new JMenuItem("Открыть", new ImageIcon("images/open.png"));
         JMenuItem save = new JMenuItem("Сохранить", new ImageIcon("images/open.png"));
         save.setAccelerator(KeyStroke.getKeyStroke('S', KeyEvent.CTRL_MASK));
@@ -38,6 +40,7 @@ public class Menu {
         JMenuItem exit = new JMenuItem(new ExitAction());
         exit.setIcon(new ImageIcon("images/exit.png"));
 
+        file.add(newProject);
         file.add(open);
         file.add(save);
         file.add(saveAs);
@@ -45,6 +48,13 @@ public class Menu {
         file.addSeparator();
         file.add(exit);
 
+        newProject.addActionListener(e -> {
+            try {
+                createProject(configurator);
+            } catch (Exception ex) {
+                throw new RuntimeException(ex);
+            }
+        });
         open.addActionListener(openFile);
         save.addActionListener(actionEvent -> {
             saveFile.saveFile();
@@ -87,5 +97,10 @@ public class Menu {
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
+    }
+
+    private void createProject(Configurator configurator) throws Exception {
+        String nameProject = JOptionPane.showInputDialog("Enter name project: ");
+        configurator.createProject(nameProject);
     }
 }
