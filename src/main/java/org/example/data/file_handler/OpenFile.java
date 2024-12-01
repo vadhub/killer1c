@@ -1,4 +1,4 @@
-package org.example.data;
+package org.example.data.file_handler;
 
 import org.example.ui.FileChooser;
 

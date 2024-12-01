@@ -1,7 +1,7 @@
 package org.example.ui;
 
 import jsyntaxpane.syntaxkits.XmlSyntaxKit;
-import org.example.data.SaveFile;
+import org.example.data.file_handler.SaveFile;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;

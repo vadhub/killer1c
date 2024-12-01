@@ -1,4 +1,4 @@
-package org.example.data;
+package org.example.data.file_handler;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,6 +1,6 @@
 package org.example.ui;
 
-import org.example.data.ReadFile;
+import org.example.data.file_handler.ReadFile;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;

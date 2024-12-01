@@ -1,8 +1,8 @@
 package org.example.ui;
 
 import org.example.data.Configurator;
-import org.example.data.OpenFile;
-import org.example.data.SaveFile;
+import org.example.data.file_handler.OpenFile;
+import org.example.data.file_handler.SaveFile;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
