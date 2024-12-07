@@ -12,14 +12,31 @@ public class CodeEditor {
 
     private final JEditorPane jEditorPane;
     private final SaveFile saveFile;
+    private JTabbedPane tabbedPane;
 
     public CodeEditor(SaveFile saveFile) {
         this.saveFile = saveFile;
         jEditorPane = new JEditorPane();
+        tabbedPane = new JTabbedPane();
     }
 
     public JPanel createPanel() {
         JPanel code = new JPanel(new BorderLayout());
+
+        code.add(createEditorPane(), BorderLayout.CENTER);
+        return code;
+    }
+
+    private void addTab(String fileName) {
+        // Создание текстовой области для вкладки
+        JTextArea textArea = new JTextArea();
+        JScrollPane scrollPane = new JScrollPane(textArea);
+
+        // Добавление вкладки с текстовой областью
+        tabbedPane.addTab(fileName, scrollPane);
+    }
+
+    private JScrollPane createEditorPane() {
         LineNumberPanel lineNumberPanel = new LineNumberPanel(jEditorPane);
         JScrollPane jScrollPane = new JScrollPane(jEditorPane);
         jScrollPane.setRowHeaderView(lineNumberPanel);
@@ -43,9 +60,7 @@ public class CodeEditor {
                 lineNumberPanel.repaint();
             }
         });
-
-        code.add(jScrollPane, BorderLayout.CENTER);
-        return code;
+        return jScrollPane;
     }
 
     public String getText() {

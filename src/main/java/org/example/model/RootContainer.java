@@ -25,6 +25,9 @@ public class RootContainer {
         this.height = height;
     }
 
+    public RootContainer() {
+    }
+
     @Override
     public String toString() {
         return "RootContainer{" +

@@ -1,5 +1,9 @@
 package org.example.data.code_gen;
 
+import org.example.model.ToDo;
+
+import java.util.concurrent.atomic.AtomicReference;
+
 public class Generator {
     private StringBuilder code;
     private String imports = "";
@@ -57,6 +61,12 @@ public class Generator {
 
     public String setText(String componentName, String text) {
         return componentName + ".setText(\"" + text + "\");\n";
+    }
+
+    public String setColumnWidth(String componentName, String width) {
+        AtomicReference<String> command = new AtomicReference<>("");
+        checkNotNull(width, () -> command.set(componentName + ".setColumnWidth(\"" + width + "\");\n"));
+        return command.get();
     }
 
     public String setSize(String componentName, int width, int height) {
@@ -126,8 +136,38 @@ public class Generator {
         return listCode.toString();
     }
 
+    public String setLayout(String containerName, String layoutType) {
+        return containerName + ".setLayout(new " + layoutType + "());\n";
+    }
+
+    public String setGridLayout(String containerName, int rows, int cols) {
+        return containerName + ".setLayout(new GridLayout(" + rows + ", " + cols + "));\n";
+    }
+
+    public String setFlowLayout(String containerName) {
+        return containerName + ".setLayout(new FlowLayout());\n";
+    }
+
+    public String setBorderLayout(String containerName) {
+        return containerName + ".setLayout(new BorderLayout());\n";
+    }
+
+    public String addComponentToBorderLayout(String containerName, String componentName, String position) {
+        return containerName + ".add(" + componentName + ", BorderLayout." + position.toUpperCase() + ");\n";
+    }
+
     public String getGeneratedCode() {
         return code.toString();
+    }
+
+    public void setCode(String str) {
+        code.append(str);
+    }
+
+    public void checkNotNull(String str, ToDo toDo) {
+        if (str != null) {
+            toDo.doIt();
+        }
     }
 
     public static String build() {

@@ -35,4 +35,7 @@ public class TextView extends View {
         super(id, text, width);
         this.type = type;
     }
+
+    public TextView() {
+    }
 }

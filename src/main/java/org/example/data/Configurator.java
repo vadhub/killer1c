@@ -19,18 +19,21 @@ public class Configurator {
     private Writer writer;
     private final Serializer serializer;
     private final String path;
+    private final String configPath;
 
     public Configurator() {
-        writer = new StringWriter();
         serializer = new Persister();
         path = System.getProperty("user.home") + File.separator + "killer1c";
+        configPath = path + File.separator + "config";
         Context.currentRootDirectory = path;
     }
 
     public void createConfig() throws Exception {
-        if (Files.exists(Path.of(path))) {
+        if (Files.exists(Path.of(path)) && Files.exists(Path.of(configPath))) {
             readConfig();
+            System.out.println("read");
         } else {
+            System.out.println("create");
             new File(path).mkdir();
             Context.currentRootDirectory = path;
             setConfig("");
@@ -38,7 +41,7 @@ public class Configurator {
     }
 
     public void readConfig() throws Exception {
-        String content = ReadFile.read(path + File.separator + "config");
+        String content = ReadFile.read(configPath);
         Reader reader = new StringReader(content);
         Config config = serializer.read(Config.class, reader, false);
         Context.currentProject = config.currentProject;
@@ -59,6 +62,7 @@ public class Configurator {
 
     private void setConfig(String project) throws Exception {
         Config config = new Config(path, project);
+        writer = new StringWriter();
         serializer.write(config, writer);
         SaveFile.saveFile(path, "config", writer.toString());
     }

@@ -15,4 +15,7 @@ public class Button extends View {
         JButton jButton = new JButton(text);
         return jButton;
     }
+
+    public Button() {
+    }
 }

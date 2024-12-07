@@ -18,6 +18,8 @@ public class Main {
         Configurator configurator = new Configurator();
         configurator.createConfig();
 
+        System.out.println(Context.output());
+
         OpenFile openFile = new OpenFile();
         Local local = new Local();
         Menu menu = new Menu();
@@ -29,9 +31,8 @@ public class Main {
         LayoutInflator inflator = new LayoutInflator();
         ActionListener run = actionEvent -> {
             try {
-                RunPythonFromJava.run(codeEditor.getText());
-                //inflator.inflate(jEditorPane.getText());
-                System.out.println("Run KILL 1c");
+                //RunPythonFromJava.run(codeEditor.getText());
+                inflator.inflate(codeEditor.getText());
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
@@ -39,7 +40,6 @@ public class Main {
 
         ActionListener destroy = actionEvent -> {
             inflator.destroyFrame();
-            System.out.println("Destroy KILL 1c");
         };
 
         menu.createMenu(frameMain, run, destroy, openFile, saveFile, configurator);
