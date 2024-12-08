@@ -19,7 +19,7 @@ public class ProjectTree2 {
 
     private JTree fileTree;
 
-    public JScrollPane projectTree2Create(String pathname, Consumer<String> file) {
+    public JScrollPane projectTree2Create(String pathname, CodeEditor codeEditor) {
         DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode(Context.currentRootDirectory);
         fileTree = new JTree(rootNode);
 
@@ -39,7 +39,8 @@ public class ProjectTree2 {
                             try {
                                 StringBuilder p = getPathFromTreePath(path);
                                 System.out.println(p);
-                                file.accept(ReadFile.read(p.toString()));
+                                codeEditor.addTabIfNotOpen(node.toString());
+                                codeEditor.setText(ReadFile.read(p.toString()));
                             } catch (IOException ex) {
                                 throw new RuntimeException(ex);
                             }

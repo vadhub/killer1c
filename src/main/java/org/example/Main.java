@@ -43,7 +43,7 @@ public class Main {
         };
 
         menu.createMenu(frameMain, run, destroy, openFile, saveFile, configurator);
-        frameMain.add(new ProjectTree2().projectTree2Create(Context.currentRootDirectory, codeEditor::setText), BorderLayout.WEST);
+        frameMain.add(new ProjectTree2().projectTree2Create(Context.currentRootDirectory, codeEditor), BorderLayout.WEST);
         frameMain.add(codeEditor.createPanel(), BorderLayout.CENTER);
         frameMain.setVisible(true);
 
