@@ -41,7 +41,10 @@ public class ProjectTree2 {
                                 for (int i = 0; i < path.getPathCount(); i++) {
                                     sb.append(path.getPath()[i]).append(File.separator);
                                 }
-                                codeEditor.addTabIfNotOpen(node.toString());
+                                if (sb.length() > 0) {
+                                    sb.setLength(sb.length() - 1); // Удаляем последний File.separator
+                                }
+                                codeEditor.addTabIfNotOpen(sb.toString(), node.toString());
                                 codeEditor.setText(ReadFile.read(sb.toString()));
                             } catch (IOException ex) {
                                 throw new RuntimeException(ex);

@@ -30,6 +30,16 @@ public class SaveFile {
         }
     }
 
+    public void saveWithoutDirectory() {
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(filepath), StandardCharsets.UTF_8))) {
+            System.out.println(filepath + " save");
+            writer.write(content);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static void saveFile(String directory, String filename, String content) {
         // Создание директории, включая все родительские директории, если они не существуют
         File dir = new File(directory);

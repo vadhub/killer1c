@@ -10,8 +10,6 @@ import org.example.data.file_handler.FileExtension;
 import org.example.data.file_handler.SaveFile;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
@@ -23,12 +21,12 @@ public class CodeEditor {
     private final SaveFile saveFile;
     private final JTabbedPane tabbedPane;
     private final List<JEditorPane> jEditorPanes;
-    private final List<String> filenames;
+    private final List<String> filepath;
 
     public CodeEditor(SaveFile saveFile) {
         this.saveFile = saveFile;
         tabbedPane = new JTabbedPane();
-        filenames = new ArrayList<>();
+        filepath = new ArrayList<>();
         jEditorPanes = new ArrayList<>();
     }
 
@@ -38,21 +36,22 @@ public class CodeEditor {
         return code;
     }
 
-    public void addTabIfNotOpen(String fileName) {
-        int index = filenames.indexOf(fileName);
+    public void addTabIfNotOpen(String pathfile, String fileName) {
+        int index = filepath.indexOf(fileName);
         if (index != -1) {
             tabbedPane.setSelectedIndex(index);
         } else {
-            addTab(fileName);
-            saveFile.setFilepath(fileName);
+            addTab(pathfile, fileName);
+            saveFile.setFilepath(pathfile);
         }
     }
 
-    private void addTab(String fileName) {
-        JEditorPane jEditorPane = createEditorPane(fileName);
+
+    private void addTab(String pathfile, String filename) {
+        JEditorPane jEditorPane = createEditorPane(pathfile);
         jEditorPanes.add(jEditorPane);
-        tabbedPane.addTab(fileName, createScrollPane(jEditorPane));
-        filenames.add(fileName);
+        tabbedPane.addTab(filename, createScrollPane(jEditorPane));
+        filepath.add(pathfile);
         tabbedPane.setSelectedIndex(tabbedPane.getTabCount() - 1);
     }
 
@@ -69,24 +68,21 @@ public class CodeEditor {
         jEditorPane.setEditorKit(getSyntaxKit(filename));
         jEditorPane.getDocument().addDocumentListener(new DocumentListener() {
             @Override
-            public void insertUpdate(DocumentEvent e) {
-                saveFile.setContent(getText());
-                saveFile.setFilepath(filenames.get(tabbedPane.getSelectedIndex()));
-                saveFile.saveFile();
-            }
+            public void insertUpdate(DocumentEvent e) {saveText();}
 
             @Override
-            public void removeUpdate(DocumentEvent e) {
-                saveFile.setContent(getText());
-                saveFile.setFilepath(filenames.get(tabbedPane.getSelectedIndex()));
-                saveFile.saveFile();
-            }
+            public void removeUpdate(DocumentEvent e) {saveText();}
 
             @Override
-            public void changedUpdate(DocumentEvent e) {
-            }
+            public void changedUpdate(DocumentEvent e) {}
         });
         return jEditorPane;
+    }
+
+    private void saveText() {
+        saveFile.setContent(getText());
+        saveFile.setFilepath(filepath.get(tabbedPane.getSelectedIndex()));
+        saveFile.saveWithoutDirectory();
     }
 
     public void setText(String text) {

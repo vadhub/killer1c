@@ -51,13 +51,27 @@ public class Configurator {
     public void createProject(String nameProject) throws Exception {
         new File(path+File.separator+nameProject).mkdir();
         setConfig(nameProject);
+        createView(nameProject);
+        createCode(nameProject);
+        Context.currentProject = nameProject;
+    }
+
+    public void createView(String nameProject) throws Exception {
+        String pathView = path+File.separator+nameProject+File.separator+"views";
+        new File(pathView).mkdir();
         writer = new StringWriter();
         TextView textView = new TextView("tv1", "hello", "10", "text");
         Button button = new Button("btn", "hello");
         RootContainer container = new RootContainer(List.of(textView, button), "400", "500");
         serializer.write(container, writer);
-        SaveFile.saveFile(path + File.separator + nameProject, "screen.xml", writer.toString());
-        Context.currentProject = nameProject;
+        SaveFile.saveFile(pathView, "screen.xml", writer.toString());
+    }
+
+    public void createCode(String nameProject) {
+        String pathCode = path+File.separator+nameProject+File.separator+"codes";
+        new File(pathCode).mkdir();
+        String content = "print(\"Hello world!\")";
+        SaveFile.saveFile(pathCode, "HelloWorld.py", content);
     }
 
     private void setConfig(String project) throws Exception {
