@@ -17,6 +17,10 @@ public class SaveFile {
         new File(directory).mkdir();
     }
 
+    public SaveFile(String directory) {
+        this.directory = directory;
+    }
+
     public void saveFile() {
         try (Writer writer = new BufferedWriter(new OutputStreamWriter(
                 new FileOutputStream(directory + File.separator + filepath), StandardCharsets.UTF_8))) {

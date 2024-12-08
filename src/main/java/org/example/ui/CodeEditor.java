@@ -10,6 +10,8 @@ import org.example.data.file_handler.FileExtension;
 import org.example.data.file_handler.SaveFile;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
@@ -20,14 +22,14 @@ public class CodeEditor {
 
     private final SaveFile saveFile;
     private final JTabbedPane tabbedPane;
-    private List<JEditorPane> jEditorPanes;
-    private List<String> filenames;
+    private final List<JEditorPane> jEditorPanes;
+    private final List<String> filenames;
 
     public CodeEditor(SaveFile saveFile) {
         this.saveFile = saveFile;
         tabbedPane = new JTabbedPane();
-        jEditorPanes = new ArrayList<>();
         filenames = new ArrayList<>();
+        jEditorPanes = new ArrayList<>();
     }
 
     public JPanel createPanel() {
@@ -42,12 +44,13 @@ public class CodeEditor {
             tabbedPane.setSelectedIndex(index);
         } else {
             addTab(fileName);
+            saveFile.setFilepath(fileName);
         }
     }
 
     private void addTab(String fileName) {
         JEditorPane jEditorPane = createEditorPane(fileName);
-        jEditorPanes.add(jEditorPane); // <- changes
+        jEditorPanes.add(jEditorPane);
         tabbedPane.addTab(fileName, createScrollPane(jEditorPane));
         filenames.add(fileName);
         tabbedPane.setSelectedIndex(tabbedPane.getTabCount() - 1);
@@ -67,12 +70,16 @@ public class CodeEditor {
         jEditorPane.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                saveFile.setContent(jEditorPane.getText());
+                saveFile.setContent(getText());
+                saveFile.setFilepath(filenames.get(tabbedPane.getSelectedIndex()));
+                saveFile.saveFile();
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                saveFile.setContent(jEditorPane.getText());
+                saveFile.setContent(getText());
+                saveFile.setFilepath(filenames.get(tabbedPane.getSelectedIndex()));
+                saveFile.saveFile();
             }
 
             @Override
@@ -83,7 +90,6 @@ public class CodeEditor {
     }
 
     public void setText(String text) {
-        System.out.println(text);
         int selectedIndex = tabbedPane.getSelectedIndex();
         if (selectedIndex != -1) {
             jEditorPanes.get(selectedIndex).setText(text);

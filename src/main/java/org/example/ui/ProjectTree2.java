@@ -5,6 +5,7 @@ import org.example.data.file_handler.ReadFile;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,7 +13,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
-import java.util.function.Consumer;
 
 
 public class ProjectTree2 {
@@ -37,10 +37,12 @@ public class ProjectTree2 {
                         Object node = path.getLastPathComponent();
                         if (!isPackageNode(node)) {
                             try {
-                                StringBuilder p = getPathFromTreePath(path);
-                                System.out.println(p);
+                                StringBuilder sb = new StringBuilder();
+                                for (int i = 0; i < path.getPathCount(); i++) {
+                                    sb.append(path.getPath()[i]).append(File.separator);
+                                }
                                 codeEditor.addTabIfNotOpen(node.toString());
-                                codeEditor.setText(ReadFile.read(p.toString()));
+                                codeEditor.setText(ReadFile.read(sb.toString()));
                             } catch (IOException ex) {
                                 throw new RuntimeException(ex);
                             }
@@ -71,14 +73,6 @@ public class ProjectTree2 {
 
         loadFileTree(rootNode, new File(pathname));
         return treeScroll;
-    }
-
-    private StringBuilder getPathFromTreePath(TreePath path) {
-        StringBuilder p = new StringBuilder(Context.currentRootDirectory);
-        for (int i = 2; i< path.getPathCount(); i++) {
-            p.append(File.separator).append(path.getPathComponent(i));
-        }
-        return p;
     }
 
     private boolean isPackageNode(Object node) {
@@ -124,10 +118,14 @@ public class ProjectTree2 {
             String fileName = JOptionPane.showInputDialog("Введите имя файла:");
             if (fileName != null && !fileName.trim().isEmpty()) {
                 File newFile = new File(directoryPath, fileName);
-                System.out.println(newFile);
                 try {
                     if (newFile.createNewFile()) {
                         JOptionPane.showMessageDialog(fileTree, "Файл создан: " + newFile.getAbsolutePath());
+
+                        // Добавляем новый узел в JTree
+                        DefaultMutableTreeNode newFileNode = new DefaultMutableTreeNode(fileName);
+                        selectedNode.add(newFileNode); // Добавляем новый узел к выбранному
+                        ((DefaultTreeModel) fileTree.getModel()).reload(selectedNode); // Обновляем модель дерева
                     } else {
                         JOptionPane.showMessageDialog(fileTree, "Файл уже существует.");
                     }
@@ -140,6 +138,8 @@ public class ProjectTree2 {
 
     private String getPathFromNode(DefaultMutableTreeNode node) {
         StringBuilder path = new StringBuilder();
+
+        System.out.println(node);
 
         while (node != null) {
             // Получаем объект узла и преобразуем его в строку
