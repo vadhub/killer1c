@@ -1,13 +1,14 @@
-package org.example.data;
+package org.example.data.code_gen;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 
-public class RunPythonFromJava {
+public class RunPythonFromJava implements RunCode {
 
-    public static void run(String pythonCode) {
+    public void run(String pythonCode) {
+
         try {
             ProcessBuilder processBuilder = new ProcessBuilder("python3");
             processBuilder.redirectErrorStream(true); // Объединяем стандартный и поток ошибок

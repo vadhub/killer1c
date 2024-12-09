@@ -26,8 +26,7 @@ public class Generator {
         imports += "import javax.swing.*;\n";
         code.append("JFrame frame = new JFrame();\n")
                 .append("frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);\n")
-                .append(String.join("\n", content))
-                .append("\nframe.setVisible(true);\n");
+                .append(String.join("\n", content));
     }
 
     public String createPanel(String name) {

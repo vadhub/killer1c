@@ -1,34 +1,22 @@
 package org.example.data.code_gen;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;import javax.swing.*;
+import javax.swing.*;
 public class Run {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        JTextField tv1 = new JTextField();
-
-        JPanel panel = new JPanel();
-
-        panel.add(tv1);
-
-        JButton button = new JButton("Click Me");
-
-        button.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Button clicked!");
-            }
-        });
-
-        panel.add(button);
-
-        frame.setSize(400, 300);
-
         frame.setTitle("My Swing Application");
 
+        frame.setSize(500,500); frame.setLocationRelativeTo(null);JPanel panel = new JPanel();
+        JTextField tv1 = new JTextField();
+        tv1.setText("hello");
+        panel.add(tv1);
+        JTextField tv2 = new JTextField();
+        tv2.setText("world");
+        panel.add(tv2);
+        JButton btn = new JButton("concat");
+        panel.add(btn);
         frame.add(panel);
-
         frame.setVisible(true);
-
     }
 }

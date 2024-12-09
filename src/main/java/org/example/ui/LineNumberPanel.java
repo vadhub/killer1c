@@ -1,14 +1,16 @@
 package org.example.ui;
 
+import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
 public class LineNumberPanel extends JPanel {
-    private JEditorPane editorPane;
+    private RSyntaxTextArea editorPane;
 
-    public LineNumberPanel(JEditorPane editorPane) {
+    public LineNumberPanel(RSyntaxTextArea editorPane) {
         this.editorPane = editorPane;
         setBackground(Color.LIGHT_GRAY);
         setPreferredSize(new Dimension(50, 0));

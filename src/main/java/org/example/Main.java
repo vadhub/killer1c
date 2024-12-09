@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.data.*;
+import org.example.data.code_gen.Creator;
 import org.example.data.file_handler.OpenFile;
 import org.example.data.file_handler.SaveFile;
 import org.example.ui.CodeEditor;
@@ -30,9 +31,9 @@ public class Main {
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameMain.setExtendedState(frameMain.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         LayoutInflator inflator = new LayoutInflator();
+        Creator creator = new Creator();
         ActionListener run = actionEvent -> {
             try {
-                //RunPythonFromJava.run(codeEditor.getText());
                 inflator.inflate(codeEditor.getText());
             } catch (Exception e) {
                 throw new RuntimeException(e);

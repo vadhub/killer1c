@@ -1,10 +1,13 @@
 package org.example.data;
 
+import org.example.data.build_project.Builder;
 import org.example.data.code_gen.Generator;
+import org.example.data.file_handler.SaveFile;
 import org.example.model.*;
 import org.simpleframework.xml.core.Persister;
 
 import javax.swing.*;
+import java.io.File;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.HashMap;
@@ -13,7 +16,7 @@ import java.util.List;
 public class LayoutInflator {
 
     private JFrame frame;
-    private HashMap<String, JComponent> components = new HashMap<>();
+    private HashMap<String, View> components = new HashMap<>();
     private Generator g;
 
     public void destroyFrame() {
@@ -22,21 +25,19 @@ public class LayoutInflator {
 
     public void inflate(String xml) throws Exception {
         g = new Generator();
+        File src = Builder.createSrc(Context.currentProject);
         Reader reader = new StringReader(xml);
         Persister serializer = new Persister();
         RootContainer container = serializer.read(RootContainer.class, reader, false);
         frame = createRoot(container);
         frame.add(createViews(container.views));
 
-        System.out.println(g.getGeneratedCode());
-
         frame.setVisible(true);
 
-        g.createMain(
-                g.getGeneratedCode()
-        );
+        g.createMain(g.getGeneratedCode());
 
-       // System.out.println(g.getGeneratedCode());
+        SaveFile.saveFile(src.getAbsolutePath(), "Main.java", g.getGeneratedCode());
+        System.out.println(g.getGeneratedCode());
     }
 
     public JPanel createPanel() {
@@ -54,7 +55,7 @@ public class LayoutInflator {
                 g.setCode(g.createButton(btn.id, btn.text));
                 g.setCode(g.addViewToView("panel", btn.id));
                 jPanel.add(component);
-                components.put(it.id, component);
+                components.put(it.id, it);
             } else if (it instanceof TextView textView) {
                 System.out.println("create text view");
                 g.setCode(g.createTextView(textView.id));
@@ -63,10 +64,11 @@ public class LayoutInflator {
                 g.setCode(g.addViewToView("panel", textView.id));
                 JComponent component = ((TextView) it).createTextView();
                 jPanel.add(component);
-                components.put(it.id, component);
+                components.put(it.id, it);
             }
         });
         g.setCode(g.addViewToView("frame", "panel"));
+        g.setCode(g.setVisible("frame", true));
         return jPanel;
     }
 
@@ -104,11 +106,13 @@ public class LayoutInflator {
                     frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
                     sb.append("frame.setExtendedState(JFrame.MAXIMIZED_BOTH);");
                 } else {
-                    frame.setSize(Integer.parseInt(rootContainer.width), Integer.parseInt(rootContainer.height));
+                    int frameWidth = Integer.parseInt(rootContainer.width);
+                    int frameHeight = Integer.parseInt(rootContainer.height);
+                    frame.setSize(frameWidth,frameHeight);
                     frame.setLocationRelativeTo(null);
                     sb.append("frame.setSize(").
-                            append(Integer.parseInt(rootContainer.width)).
-                            append("),").append(Integer.parseInt(rootContainer.height)).
+                            append(frameWidth).append(',').
+                            append(frameHeight).append(")").
                             append("; frame.setLocationRelativeTo(null);");
 
                 }
@@ -120,7 +124,7 @@ public class LayoutInflator {
         return frame;
     }
 
-    public JComponent getElementById(String id) {
+    public View getElementById(String id) {
         return components.get(id);
     }
 }

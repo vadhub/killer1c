@@ -60,4 +60,12 @@ public class Builder {
             e.printStackTrace();
         }
     }
+
+    public static File createSrc(String projectDir) {
+        File srcDir = new File(projectDir, "src");
+        if (!srcDir.exists()) {
+            srcDir.mkdirs();
+        }
+        return srcDir;
+    }
 }
