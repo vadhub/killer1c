@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.data.*;
+import org.example.data.code_gen.Analyser;
 import org.example.data.code_gen.Creator;
 import org.example.data.file_handler.OpenFile;
 import org.example.data.file_handler.SaveFile;
@@ -31,10 +32,11 @@ public class Main {
         frameMain.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameMain.setExtendedState(frameMain.getExtendedState() | JFrame.MAXIMIZED_BOTH);
         LayoutInflator inflator = new LayoutInflator();
-        Creator creator = new Creator();
+        Creator creator = new Creator(new Analyser(), inflator);
         ActionListener run = actionEvent -> {
             try {
                 inflator.inflate(codeEditor.getText());
+                //creator.createSrc(new File(Context.currentRootDirectory + File.separator + Context.currentProject + File.separator + Context.codesFolder));
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

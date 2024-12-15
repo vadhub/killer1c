@@ -25,17 +25,14 @@ public class LayoutInflator {
 
     public void inflate(String xml) throws Exception {
         g = new Generator();
-        File src = Builder.createSrc(Context.currentProject);
+        File src = Builder.createSrc(Context.currentRootDirectory + File.separator + Context.currentProject);
         Reader reader = new StringReader(xml);
         Persister serializer = new Persister();
         RootContainer container = serializer.read(RootContainer.class, reader, false);
         frame = createRoot(container);
         frame.add(createViews(container.views));
-
         frame.setVisible(true);
-
         g.createMain(g.getGeneratedCode());
-
         SaveFile.saveFile(src.getAbsolutePath(), "Main.java", g.getGeneratedCode());
         System.out.println(g.getGeneratedCode());
     }

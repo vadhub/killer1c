@@ -66,6 +66,7 @@ public class Builder {
         if (!srcDir.exists()) {
             srcDir.mkdirs();
         }
+        System.out.println("src created: " + srcDir);
         return srcDir;
     }
 }
