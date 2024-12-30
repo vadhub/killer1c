@@ -9,3 +9,7 @@ Main functions:
 what's ready:
 -  a simple IDE for creating an interface and interacting with the file system
 
+![IDE](https://github.com/vadhub/killer1c/blob/main/ide.png)
+
+Result of genereted XML code:
+![result](https://github.com/vadhub/killer1c/blob/main/result.png)
