@@ -2,6 +2,7 @@ package org.example.data.code_gen;
 
 import org.example.model.ToDo;
 
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Generator {
@@ -60,6 +61,10 @@ public class Generator {
 
     public String setText(String componentName, String text) {
         return componentName + ".setText(\"" + text + "\");\n";
+    }
+
+    public String getText(String componentName) {
+        return componentName + ".getText();\n";
     }
 
     public String setColumnWidth(String componentName, String width) {
@@ -167,6 +172,10 @@ public class Generator {
         if (str != null) {
             toDo.doIt();
         }
+    }
+
+    public String print(Object text) {
+        return "System.out.println("+text+");\n";
     }
 
     public static String build() {

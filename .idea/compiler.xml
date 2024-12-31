@@ -9,10 +9,8 @@
         <module name="killer1c" />
       </profile>
     </annotationProcessing>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="killer1c" options="" />
-    </option>
+    <bytecodeTargetLevel>
+      <module name="killer1c" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

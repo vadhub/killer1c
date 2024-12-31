@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8dbe31b4-b198-4431-9ce8-c98c8cef4536" name="Changes" comment="create src file with main file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/api/Inflater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/killer1c.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/Configurator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/Context.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Analyser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Analyser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Creator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Creator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/ReplaceText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/ReplaceText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/file_handler/SaveFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/file_handler/SaveFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/ProjectTree2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/Configurator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/Context.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/Context.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/LayoutInflator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/LayoutInflator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/build_project/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/build_project/Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Analyser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Analyser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Creator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Creator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Generator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/ReplaceText.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/ReplaceText.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/file_handler/SaveFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/file_handler/SaveFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ui/Menu$ExitAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ui/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ui/ProjectTree2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ui/ProjectTree2.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Tag Library Descriptor" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;vadhub&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/vadhub/killer1c.git&quot;,
+    &quot;accountId&quot;: &quot;6d8401b0-b8fa-4700-9b15-3f854c4148cc&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2pGHhLIWAzrddszdwipmjf97SEL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/vadim/IdeaProjects/killer1c/src/main/java/org/example/antrl&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.data.code_gen" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/antrl" />
+      <recent name="$PROJECT_DIR$/drawable" />
+      <recent name="$PROJECT_DIR$/src/main/resources/values" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.ui" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Unnamed">
+    <configuration name="Builder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.data.build_project.Builder" />
+      <module name="killer1c" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.data.build_project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileExtension" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.data.file_handler.FileExtension" />
+      <module name="killer1c" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.data.file_handler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Generator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.data.code_gen.Generator" />
+      <module name="killer1c" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.data.code_gen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.data.code_gen.Run" />
+      <module name="killer1c" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.data.code_gen.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.antrl.Test" />
+      <module name="killer1c" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.antrl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="killer1c" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Run" />
+        <item itemvalue="Application.Builder" />
+        <item itemvalue="Application.Generator" />
+        <item itemvalue="Application.FileExtension" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8dbe31b4-b198-4431-9ce8-c98c8cef4536" name="Changes" comment="" />
+      <created>1732385611471</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732385611471</updated>
+      <workItem from="1732385612609" duration="7026000" />
+      <workItem from="1732439848593" duration="2283000" />
+      <workItem from="1732456442937" duration="16454000" />
+      <workItem from="1732527191657" duration="891000" />
+      <workItem from="1732528429333" duration="629000" />
+      <workItem from="1732612075810" duration="17000" />
+      <workItem from="1732635027742" duration="6591000" />
+      <workItem from="1732641838942" duration="3791000" />
+      <workItem from="1732715712716" duration="3912000" />
+      <workItem from="1732733727450" duration="2268000" />
+      <workItem from="1732896778109" duration="2386000" />
+      <workItem from="1732906153903" duration="9213000" />
+      <workItem from="1732960821662" duration="1594000" />
+      <workItem from="1732994272876" duration="3592000" />
+      <workItem from="1733068663285" duration="6121000" />
+      <workItem from="1733087715558" duration="3526000" />
+      <workItem from="1733091631031" duration="2667000" />
+      <workItem from="1733135590768" duration="3716000" />
+      <workItem from="1733314293145" duration="22000" />
+      <workItem from="1733509033259" duration="4863000" />
+      <workItem from="1733593739938" duration="4529000" />
+      <workItem from="1733650344630" duration="34000" />
+      <workItem from="1733654483152" duration="3001000" />
+      <workItem from="1733670116513" duration="3104000" />
+      <workItem from="1733685598278" duration="3770000" />
+      <workItem from="1733739607524" duration="4082000" />
+      <workItem from="1733754781910" duration="2348000" />
+      <workItem from="1733760707276" duration="3114000" />
+      <workItem from="1734200822729" duration="18000" />
+      <workItem from="1734295250583" duration="2635000" />
+      <workItem from="1734537656141" duration="908000" />
+      <workItem from="1734541589131" duration="4256000" />
+      <workItem from="1734608595382" duration="656000" />
+      <workItem from="1734622740927" duration="4137000" />
+      <workItem from="1735589984393" duration="769000" />
+      <workItem from="1735641778825" duration="5152000" />
+      <workItem from="1735654372812" duration="147000" />
+      <workItem from="1735654526956" duration="130000" />
+      <workItem from="1735654664581" duration="88000" />
+      <workItem from="1735654759705" duration="648000" />
+      <workItem from="1735655415619" duration="2473000" />
+    </task>
+    <task id="LOCAL-00001" summary="optimisation getText">
+      <created>1732392209684</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732392209684</updated>
+    </task>
+    <task id="LOCAL-00002" summary="create src file with main file">
+      <created>1734296091785</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734296091785</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="optimisation getText" />
+    <MESSAGE value="create src file with main file" />
+    <option name="LAST_COMMIT_MESSAGE" value="create src file with main file" />
+  </component>
+</project>
