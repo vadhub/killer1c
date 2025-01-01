@@ -40,7 +40,7 @@ public class SaveFile {
         }
     }
 
-    public static File saveFile(String directory, String filename, String content) {
+    public static void saveFile(String directory, String filename, String content) {
         // Создание директории, включая все родительские директории, если они не существуют
         File dir = new File(directory);
         if (!dir.exists()) {
@@ -61,7 +61,6 @@ public class SaveFile {
             throw new RuntimeException("Ошибка при записи в файл: " + file.getAbsolutePath(), e);
         }
 
-        return file;
     }
 
     public String getFilepath() {

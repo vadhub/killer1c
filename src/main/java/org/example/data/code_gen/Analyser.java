@@ -1,6 +1,6 @@
 package org.example.data.code_gen;
 
-import org.example.data.LayoutInflator;
+import org.example.data.LayoutInflater;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +16,7 @@ public class Analyser {
         this.generator = generator;
     }
 
-    public String createNewCode(File code, LayoutInflator layoutInflator) throws IOException {
+    public String createNewCode(File code, LayoutInflater layoutInflator) throws IOException {
         StringBuilder sb = new StringBuilder();
         Files.readAllLines(code.toPath()).forEach(it -> sb.append(replaceElementOnTextById(it, layoutInflator)).append(' '));
         return sb.toString();
@@ -27,7 +27,7 @@ public class Analyser {
         return matcher.find() ? matcher.group(1) : "";
     }
 
-    public String replaceElementOnTextById(String input, LayoutInflator layoutInflator) {
+    public String replaceElementOnTextById(String input, LayoutInflater layoutInflator) {
         String text = layoutInflator.getElementById(getId(input.trim())).text;
         return ReplaceText.replaceElementById(input, text);
     }

@@ -1,26 +1,30 @@
 package org.example.data.code_gen;
 
-import org.example.data.Context;
-import org.example.data.LayoutInflator;
-
 import java.io.File;
-import java.io.IOException;
 
 public class Creator {
 
-    Analyser analyser;
-    LayoutInflator layoutInflator;
-    Generator generator;
-
-    public Creator(LayoutInflator layoutInflator, Generator generator) {
-        this.layoutInflator = layoutInflator;
-        this.generator = generator;
-        this.analyser = new Analyser(generator);
+    public File createGenerated() {
+        File srcDir = new File("generate");
+        if (!srcDir.exists()) {
+            srcDir.mkdirs();
+        }
+        return srcDir;
     }
 
-    public void createSrc(File code) throws IOException {
-//        File src = Builder.createSrc(Context.currentProject);
-        String newCode = analyser.createNewCode(code, layoutInflator);
-//        SaveFile.saveFile(src.getAbsolutePath(), "Code.java", newCode);
+    public File createView() {
+        File viewDir = new File("view");
+        if (!viewDir.exists()) {
+            viewDir.mkdirs();
+        }
+        return viewDir;
+    }
+
+    public File createManifest() {
+        File manifestView = new File("manifest");
+        if (!manifestView.exists()) {
+            manifestView.mkdirs();
+        }
+        return manifestView;
     }
 }

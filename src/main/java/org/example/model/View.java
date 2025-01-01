@@ -33,4 +33,11 @@ public class View {
 
     public View() {
     }
+
+    public static String checkNotNull(String str) {
+        if (str != null) {
+            return str;
+        }
+        return "";
+    }
 }

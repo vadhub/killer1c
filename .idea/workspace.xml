@@ -5,42 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dbe31b4-b198-4431-9ce8-c98c8cef4536" name="Changes" comment="create src file with main file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/api/Inflater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/killer1c.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/Configurator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/Context.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/api/Inflater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/api/Inflater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Analyser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Analyser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Creator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Creator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/ReplaceText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/ReplaceText.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/file_handler/SaveFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/file_handler/SaveFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ui/ProjectTree2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/Configurator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/Context.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/Context.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/LayoutInflator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/LayoutInflator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/build_project/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/build_project/Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Analyser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Analyser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Creator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Creator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Generator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/ReplaceText.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/ReplaceText.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/file_handler/SaveFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/file_handler/SaveFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ui/Menu$ExitAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ui/Menu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ui/ProjectTree2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/ui/ProjectTree2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/TextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +30,8 @@
       <list>
         <option value="package-info" />
         <option value="Tag Library Descriptor" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -266,6 +241,8 @@
       <workItem from="1735654664581" duration="88000" />
       <workItem from="1735654759705" duration="648000" />
       <workItem from="1735655415619" duration="2473000" />
+      <workItem from="1735658019190" duration="56000" />
+      <workItem from="1735737610584" duration="2076000" />
     </task>
     <task id="LOCAL-00001" summary="optimisation getText">
       <created>1732392209684</created>

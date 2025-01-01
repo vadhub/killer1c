@@ -1,6 +1,6 @@
 package org.example.api;
 
 public interface Inflater {
-    void createWindow();
+    void inflate(String xml) throws Exception;
     void destroyWindow();
 }
