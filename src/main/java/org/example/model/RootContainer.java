@@ -7,6 +7,9 @@ import java.util.List;
 @Root
 public class RootContainer {
 
+    @Attribute(required = false)
+    public String name;
+
     @ElementListUnion({
             @ElementList(inline = true, entry = "TextView", type = TextView.class, required = false),
             @ElementList(inline = true, entry = "Button", type = Button.class, required = false)
@@ -19,7 +22,8 @@ public class RootContainer {
     @Attribute(required = false)
     public String height;
 
-    public RootContainer(List<View> views, String width, String height) {
+    public RootContainer(String name, List<View> views, String width, String height) {
+        this.name = name;
         this.views = views;
         this.width = width;
         this.height = height;

@@ -6,22 +6,26 @@ import org.simpleframework.xml.Root;
 
 import javax.lang.model.element.Modifier;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 
 @Root
 public class Button extends View {
+
+    private JButton jButton;
 
     public Button(String id, String text) {
         super(id, text);
     }
 
     public JButton createButton() {
-        JButton jButton = new JButton(text);
+        jButton = new JButton(text);
         return jButton;
     }
 
     public Pair<File, TypeSpec> createClass() {
-        File javaClass = new File("TextView_" + id);
+        File javaClass = new File("Button" + id);
         TypeSpec view = TypeSpec.classBuilder(javaClass.getName())
                 .addModifiers(Modifier.PUBLIC)
                 .addField(FieldSpec.builder(String.class, "id", Modifier.PUBLIC).initializer('"'+checkNotNull(id)+'"').build())
@@ -30,6 +34,11 @@ public class Button extends View {
                 .addField(FieldSpec.builder(String.class, "width", Modifier.PUBLIC).initializer('"'+checkNotNull(width)+'"').build())
                 .build();
         return new Pair<>(javaClass, view);
+    }
+
+    @Override
+    public void setOnClickListener(Action toDo) {
+        jButton.addActionListener(actionEvent -> toDo.invoke());
     }
 
     public Button() {

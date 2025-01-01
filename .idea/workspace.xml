@@ -5,17 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dbe31b4-b198-4431-9ce8-c98c8cef4536" name="Changes" comment="create src file with main file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/data/ListenerEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate/Button_btn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate/TextView_tv1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate/TextView_tv2.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/api/Inflater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/api/Inflater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Analyser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Analyser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Creator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Creator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/file_handler/SaveFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/file_handler/SaveFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Generator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/LazyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/LazyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/RootContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/RootContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/TextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/ToDo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Action.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/api/Inflater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/api/Inflater.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/LayoutInflator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/build_project/Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/build_project/Builder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Analyser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Analyser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Creator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Creator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/file_handler/SaveFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/file_handler/SaveFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/Button.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/RootContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/RootContainer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/TextView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/values/codetest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/values/codetest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +259,8 @@
       <workItem from="1735654759705" duration="648000" />
       <workItem from="1735655415619" duration="2473000" />
       <workItem from="1735658019190" duration="56000" />
-      <workItem from="1735737610584" duration="2076000" />
+      <workItem from="1735737610584" duration="2155000" />
+      <workItem from="1735746480241" duration="3433000" />
     </task>
     <task id="LOCAL-00001" summary="optimisation getText">
       <created>1732392209684</created>

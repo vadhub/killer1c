@@ -1,8 +1,7 @@
 package org.example.data.code_gen;
 
-import org.example.model.ToDo;
+import org.example.model.Action;
 
-import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Generator {
@@ -168,9 +167,9 @@ public class Generator {
         code.append(str);
     }
 
-    public void checkNotNull(String str, ToDo toDo) {
+    public void checkNotNull(String str, Action toDo) {
         if (str != null) {
-            toDo.doIt();
+            toDo.invoke();
         }
     }
 

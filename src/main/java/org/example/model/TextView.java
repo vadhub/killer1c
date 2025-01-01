@@ -7,11 +7,14 @@ import org.simpleframework.xml.Root;
 
 import javax.lang.model.element.Modifier;
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
 
 @Root
 public class TextView extends View {
 
+    private JTextField jTextField;
     /**
      * number
      * date
@@ -23,7 +26,6 @@ public class TextView extends View {
     public String type;
 
     public JTextField createTextView() {
-        JTextField jTextField = null;
         if (width != null) {
             if (!width.isEmpty()) {
                 jTextField = new JTextField(Integer.parseInt(width));
@@ -33,6 +35,20 @@ public class TextView extends View {
         }
         jTextField.setText(text);
         return jTextField;
+    }
+
+    @Override
+    public void setOnClickListener(Action toDo) {
+        jTextField.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                toDo.invoke();
+            }
+        });
+    }
+
+    public void setText(String text) {
+        jTextField.setText(text);
     }
 
     public Pair<File, TypeSpec> createClass() {

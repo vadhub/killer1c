@@ -5,6 +5,9 @@ import org.simpleframework.xml.Root;
 
 @Root
 public class View {
+
+    private Action toDo;
+
     @Attribute(required = false)
     public String id;
 
@@ -39,5 +42,9 @@ public class View {
             return str;
         }
         return "";
+    }
+
+    public void setOnClickListener(Action toDo) {
+        this.toDo = toDo;
     }
 }

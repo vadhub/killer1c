@@ -4,8 +4,8 @@ import java.io.File;
 
 public class Creator {
 
-    public File createGenerated() {
-        File srcDir = new File("generate");
+    public File createGenerated(String pathToProject) {
+        File srcDir = new File(pathToProject+File.separator+"generate");
         if (!srcDir.exists()) {
             srcDir.mkdirs();
         }
