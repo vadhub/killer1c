@@ -14,9 +14,7 @@ public class Main {
             TextView tv2 = (TextView) inflater.getElementById("tv2");
             TextView result = (TextView) inflater.getElementById("result");
 
-            inflater.getElementById("btn").setOnClickListener(() -> {
-                result.setText(tv1.text + tv2.text);
-            });
+            inflater.getElementById("btn").setOnClickListener(() -> result.setText(tv1.text + tv2.text));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

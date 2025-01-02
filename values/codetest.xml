@@ -3,4 +3,5 @@
     <TextView id="tv2" text="world"/>
     <Button id="btn" text="concat"/>
     <TextView id="result" text="result"/>
+    <Table id="table" headers="a, b, c" rows="{{1, 2, 3}, {2, 3, 4}}"/>
 </RootContainer>

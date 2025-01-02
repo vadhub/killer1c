@@ -2,15 +2,11 @@ package org.example.model;
 
 import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.TypeSpec;
-import org.simpleframework.xml.Root;
 
 import javax.lang.model.element.Modifier;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 
-@Root
 public class Button extends View {
 
     private JButton jButton;

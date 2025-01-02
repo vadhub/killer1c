@@ -3,7 +3,6 @@ package org.example.model;
 import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.TypeSpec;
 import org.simpleframework.xml.Attribute;
-import org.simpleframework.xml.Root;
 
 import javax.lang.model.element.Modifier;
 import javax.swing.*;
@@ -11,7 +10,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 
-@Root
 public class TextView extends View {
 
     private JTextField jTextField;

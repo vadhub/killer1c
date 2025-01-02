@@ -12,7 +12,8 @@ public class RootContainer {
 
     @ElementListUnion({
             @ElementList(inline = true, entry = "TextView", type = TextView.class, required = false),
-            @ElementList(inline = true, entry = "Button", type = Button.class, required = false)
+            @ElementList(inline = true, entry = "Button", type = Button.class, required = false),
+            @ElementList(inline = true, entry = "Table", type = Table.class, required = false)
     })
     public List<View> views;
 
