@@ -7,9 +7,8 @@ Main functions:
 - interface generation based on database tables
 
 what's ready:
--  a simple IDE for creating an interface and interacting with the file system
-
-![IDE](https://github.com/vadhub/killer1c/blob/main/ide.png)
+- creating an interface
+- bind interface with java code like android sdk
 
 Result of genereted XML code:
 ![result](https://github.com/vadhub/killer1c/blob/main/result.png)
