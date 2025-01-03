@@ -9,7 +9,7 @@ import java.awt.event.MouseEvent;
 import java.util.Arrays;
 import java.util.List;
 
-public class Table extends View {
+public class Table extends ViewGroup {
     public JTable table;
     /*
     * set header with icon
@@ -34,14 +34,14 @@ public class Table extends View {
     @Attribute(name = "rows", required = false)
     public String sRows;
 
-    public Table(String id, String text, String width, String sHeader, List<Row> rows) {
-        super(id, text, width);
+    public Table(String id, String text, String sHeader, List<Row> rows) {
+        super(id, text);
         this.sHeader = sHeader;
         this.rows = rows;
     }
 
-    public Table(String id, String text, String width, List<Header> header, List<Row> rows) {
-        super(id, text, width);
+    public Table(String id, String text, List<Header> header, List<Row> rows) {
+        super(id, text);
         this.header = header;
         this.rows = rows;
     }
@@ -55,6 +55,7 @@ public class Table extends View {
     }
 
     public JTable createTable() {
+        System.out.println("create table");
         Object[][] row;
         if (rows != null) {
             row = mapRows(rows);

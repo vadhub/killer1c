@@ -22,9 +22,8 @@ public class LayoutInflater implements Inflater {
     public void inflate(String xml, String pathProject) throws Exception {
         Reader reader = new StringReader(xml);
         Persister serializer = new Persister();
-        RootContainer container = serializer.read(RootContainer.class, reader, false);
+        ViewGroup container = serializer.read(ViewGroup.class, reader, false);
         frame = createRoot(container);
-        frame.add(createViews(container.views));
         frame.setVisible(true);
     }
 
@@ -33,66 +32,42 @@ public class LayoutInflater implements Inflater {
         return jPanel;
     }
 
-    public JPanel createViews(List<View> views) {
+    public JPanel createViews(List<ViewGroup> views) {
         JPanel jPanel = createPanel();
         views.forEach(it -> {
-            if (it instanceof Button) {
-                System.out.println("create button");
-                JButton component = ((Button) it).createButton();
-                jPanel.add(component);
-                components.put(it.id, it);
-            } else if (it instanceof TextView) {
-                System.out.println("create text view");
-                JTextField component = ((TextView) it).createTextView();
-                jPanel.add(component);
-                components.put(it.id, it);
-            } else if (it instanceof Table) {
-                System.out.println("create table");
-                JTable component = ((Table) it).createTable();
-                jPanel.add(new JScrollPane(component));
-                components.put(it.id, it);
+            JComponent jComponent = null;
+            if (it instanceof Button btn) {
+                jComponent = btn.createButton();
+            } else if (it instanceof TextView tv) {
+                jComponent = tv.createTextView();
+            } else if (it instanceof Table tbl) {
+                jComponent = new JScrollPane(tbl.createTable());
             }
+            jPanel.add(jComponent);
+            components.put(it.id, it);
         });
         return jPanel;
     }
 
-    public JPanel createContainers(List<Container> containers) {
-        JPanel jPanel = createPanel();
-        for (Container container : containers) {
-            jPanel.add(createContainer(container));
-        }
-        return jPanel;
-    }
-
-    public JPanel createContainer(Container container) {
-        JPanel jPanel = createPanel();
-
-        if (container instanceof LazyList) {
-            return ((LazyList) container).createList(() -> {});
+    public JFrame createRoot(ViewGroup frameContainer) {
+        JFrame frame;
+        if (frameContainer instanceof FrameContainer f) {
+            frame = new JFrame(f.name);
         } else {
-            jPanel.add(createViews(container.views));
+            frame = new JFrame();
         }
-
-        if (container.containers != null) {
-            return createContainers(container.containers);
-        }
-
-        return jPanel;
-    }
-
-    public JFrame createRoot(RootContainer rootContainer) {
-        JFrame frame = new JFrame(rootContainer.name);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            if (rootContainer.width != null && rootContainer.height != null) {
-                if ("match_parent".equals(rootContainer.width) && "match_parent".equals(rootContainer.height)) {
-                    frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                } else {
-                    int frameWidth = Integer.parseInt(rootContainer.width);
-                    int frameHeight = Integer.parseInt(rootContainer.height);
-                    frame.setSize(frameWidth,frameHeight);
-                    frame.setLocationRelativeTo(null);
-                }
+        if (frameContainer.width != null && frameContainer.height != null) {
+            if ("match_parent".equals(frameContainer.width) && "match_parent".equals(frameContainer.height)) {
+                frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+            } else {
+                int frameWidth = Integer.parseInt(frameContainer.width);
+                int frameHeight = Integer.parseInt(frameContainer.height);
+                frame.setSize(frameWidth, frameHeight);
+                frame.setLocationRelativeTo(null);
             }
+        }
+        frame.add(createViews(frameContainer.views));
         return frame;
     }
 

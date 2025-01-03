@@ -1,7 +1,10 @@
-<RootContainer name="my killer 1c" width="500" height="500">
+<FrameContainer name="my killer 1c" width="500" height="500">
     <TextView id="tv1" text="hello"/>
     <TextView id="tv2" text="world"/>
     <Button id="btn" text="concat"/>
-    <TextView id="result" text="result"/>
-    <Table id="table" headers="a, b, c" rows="{{1, 2, 3}, {2, 3, 4}}"/>
-</RootContainer>
+    <TextView position="center" id="result" text="result"/>
+    <Table
+            id="table"
+            headers="a, b, c"
+            rows="{{1, 2, 3}, {2, 3, 4}}"/>
+</FrameContainer>
