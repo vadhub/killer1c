@@ -5,7 +5,7 @@ import org.simpleframework.xml.*;
 import java.awt.*;
 import java.util.List;
 
-@Root
+
 public class FrameContainer extends ViewGroup {
 
     /*
@@ -40,10 +40,9 @@ public class FrameContainer extends ViewGroup {
 
     @Override
     public String toString() {
-        return "RootContainer{" +
-                "views=" + views +
-                ", width='" + width + '\'' +
-                ", height='" + height + '\'' +
+        return "FrameContainer{" +
+                "position='" + position + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

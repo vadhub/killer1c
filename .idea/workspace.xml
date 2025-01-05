@@ -5,35 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dbe31b4-b198-4431-9ce8-c98c8cef4536" name="Changes" comment="create src file with main file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/ViewGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/LinearContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/Analyser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Container.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/file_handler/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/file_handler/ReadFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/FrameContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/FrameContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Label.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/LazyList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/MenuItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/RootContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/TextView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/ViewGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/ViewGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/LayoutInflater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/LayoutInflater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/Analyser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/Button.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/Button.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/Container.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/file_handler/ReadFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/file_handler/ReadFile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/FrameContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/FrameContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/Label.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/Label.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/LazyList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/MenuItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/RootContainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/Table$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/Table$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/Table.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/TextView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/TextView$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/TextView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/View.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/menu/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/ViewGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/ViewGroup.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/values/codetest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/values/codetest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +82,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/vadim/IdeaProjects/killer1c/src/main/java/org/example/antrl&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/vadim/Downloads/android-sdk-sources-for-api-level-2-master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -268,7 +251,12 @@
       <workItem from="1735839749970" duration="1418000" />
       <workItem from="1735894654399" duration="461000" />
       <workItem from="1735905492753" duration="2114000" />
-      <workItem from="1735911649912" duration="3314000" />
+      <workItem from="1735911649912" duration="3576000" />
+      <workItem from="1735981683576" duration="20000" />
+      <workItem from="1736027556284" duration="500000" />
+      <workItem from="1736028067254" duration="5647000" />
+      <workItem from="1736033725133" duration="721000" />
+      <workItem from="1736072555551" duration="3766000" />
     </task>
     <task id="LOCAL-00001" summary="optimisation getText">
       <created>1732392209684</created>

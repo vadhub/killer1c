@@ -8,6 +8,7 @@ import java.util.List;
 public class ViewGroup extends View {
 
     @ElementListUnion({
+            @ElementList(inline = true, entry = "FrameContainer", type = FrameContainer.class, required = false),
             @ElementList(inline = true, entry = "Button", type = Button.class, required = false),
             @ElementList(inline = true, entry = "TextView", type = TextView.class, required = false),
             @ElementList(inline = true, entry = "Table", type = Table.class, required = false)
