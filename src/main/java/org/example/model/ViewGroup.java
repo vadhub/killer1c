@@ -11,7 +11,8 @@ public class ViewGroup extends View {
             @ElementList(inline = true, entry = "FrameContainer", type = FrameContainer.class, required = false),
             @ElementList(inline = true, entry = "Button", type = Button.class, required = false),
             @ElementList(inline = true, entry = "TextView", type = TextView.class, required = false),
-            @ElementList(inline = true, entry = "Table", type = Table.class, required = false)
+            @ElementList(inline = true, entry = "Table", type = Table.class, required = false),
+            @ElementList(inline = true, entry = "Label", type = Label.class, required = false)
     })
     public List<ViewGroup> views;
 

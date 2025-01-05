@@ -4,6 +4,7 @@ import org.example.api.Inflater;
 import org.example.data.file_handler.ReadFile;
 import org.example.model.Button;
 import org.example.model.*;
+import org.example.model.Label;
 import org.example.model.manifest.Manifest;
 import org.simpleframework.xml.core.Persister;
 
@@ -54,6 +55,8 @@ public class LayoutInflater implements Inflater {
                 jComponent = tv.createTextView();
             } else if (it instanceof Table tbl) {
                 jComponent = new JScrollPane(tbl.createTable());
+            } else if (it instanceof Label lb) {
+                jComponent = lb.createLabel();
             }
             if (jComponent != null) {
                 jPanel.add(jComponent);

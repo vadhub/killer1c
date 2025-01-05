@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dbe31b4-b198-4431-9ce8-c98c8cef4536" name="Changes" comment="create src file with main file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/manifest/Manifest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/values/manifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/Context.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/values/res/screen_end.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/values/res/screen_start.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/ReplaceText.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/FrameContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/FrameContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/LinearContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/LinearContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/TextView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/Context.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/ReplaceText.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/TextView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Label.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/values/codetest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/values/codetest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,37 +62,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/vadim/Downloads/android-sdk-sources-for-api-level-2-master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/vadim/IdeaProjects/killer1c/values/res",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.model" />
       <recent name="org.example.data.code_gen" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/values/res" />
       <recent name="$PROJECT_DIR$/src/main/java/org/example/antrl" />
       <recent name="$PROJECT_DIR$/drawable" />
       <recent name="$PROJECT_DIR$/src/main/resources/values" />
@@ -259,7 +250,7 @@
       <workItem from="1736028067254" duration="5647000" />
       <workItem from="1736033725133" duration="721000" />
       <workItem from="1736072555551" duration="4089000" />
-      <workItem from="1736081862748" duration="1444000" />
+      <workItem from="1736081862748" duration="2072000" />
     </task>
     <task id="LOCAL-00001" summary="optimisation getText">
       <created>1732392209684</created>

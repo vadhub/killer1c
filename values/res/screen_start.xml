@@ -1,11 +1,5 @@
 <LinearContainer orientation="vertical" width="500" height="500">
-    <Label text="ok"/>
     <TextView id="tv1" text="hello"/>
     <TextView id="tv2" text="world"/>
     <Button id="btn" text="concat"/>
-    <TextView position="center" id="result" text="result"/>
-    <Table
-            id="table"
-            headers="a, b, c"
-            rows="{{1, 2, 3}, {2, 3, 4}}"/>
 </LinearContainer>
