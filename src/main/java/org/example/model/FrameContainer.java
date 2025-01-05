@@ -14,12 +14,8 @@ public class FrameContainer extends ViewGroup {
     @Attribute(required = false)
     public String position;
 
-    @Attribute(required = false)
-    public String name;
-
-    public FrameContainer(String name, List<ViewGroup> views, String width, String height) {
+    public FrameContainer(List<ViewGroup> views, String width, String height) {
         super(views);
-        this.name = name;
         this.width = width;
         this.height = height;
     }
@@ -42,7 +38,6 @@ public class FrameContainer extends ViewGroup {
     public String toString() {
         return "FrameContainer{" +
                 "position='" + position + '\'' +
-                ", name='" + name + '\'' +
                 '}';
     }
 }

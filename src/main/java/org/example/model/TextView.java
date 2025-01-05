@@ -45,6 +45,9 @@ public class TextView extends Label {
     public void setText(String text) {
         jTextField.setText(text);
     }
+    public String getText() {
+        return jTextField.getText();
+    }
 
     public TextView(String id, String text, String width, String type) {
         super(id, text, width);

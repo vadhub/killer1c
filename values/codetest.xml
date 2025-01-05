@@ -1,4 +1,4 @@
-<LinearContainer name="my killer 1c" width="500" height="500">
+<LinearContainer orientation="vertical" width="500" height="500">
     <TextView id="tv1" text="hello"/>
     <TextView id="tv2" text="world"/>
     <Button id="btn" text="concat"/>

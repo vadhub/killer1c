@@ -14,9 +14,6 @@ public class LinearContainer extends ViewGroup {
     @Attribute(required = false)
     public String orientation = ORIENTATION_HORIZONTAL;
 
-    @Attribute(required = false)
-    public String name;
-
     public LinearContainer() {
     }
 }

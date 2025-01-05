@@ -4,10 +4,13 @@ import org.example.api.Inflater;
 import org.example.data.file_handler.ReadFile;
 import org.example.model.Button;
 import org.example.model.*;
+import org.example.model.manifest.Manifest;
 import org.simpleframework.xml.core.Persister;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.Reader;
 import java.io.StringReader;
 import java.util.HashMap;
@@ -38,11 +41,6 @@ public class LayoutInflater implements Inflater {
         }
 
         return serializer.read(FrameContainer.class, reader, false);
-    }
-
-    public JPanel createPanel() {
-        JPanel jPanel = new JPanel();
-        return jPanel;
     }
 
     public JPanel createViews(List<ViewGroup> views, ViewGroup root) {
@@ -80,13 +78,11 @@ public class LayoutInflater implements Inflater {
         return manager;
     }
 
-    public JFrame createRoot(ViewGroup root) {
+    public JFrame createRoot(ViewGroup root) throws Exception {
+        Persister serializer = new Persister();
+        Manifest manifest =  serializer.read(Manifest.class, new FileReader("values/manifest.xml"), false);
         JFrame frame;
-        if (root instanceof FrameContainer f) {
-            frame = new JFrame(f.name);
-        } else {
-            frame = new JFrame();
-        }
+        frame = new JFrame(manifest.name);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         if (root.width != null && root.height != null) {
             if ("match_parent".equals(root.width) && "match_parent".equals(root.height)) {

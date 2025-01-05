@@ -5,18 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dbe31b4-b198-4431-9ce8-c98c8cef4536" name="Changes" comment="create src file with main file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/LinearContainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/manifest/Manifest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/values/manifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/Context.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/LayoutInflater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/file_handler/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/data/file_handler/ReadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/data/code_gen/ReplaceText.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/FrameContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/FrameContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/ViewGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/ViewGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/LayoutInflater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/LayoutInflater.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/file_handler/ReadFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/data/file_handler/ReadFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/FrameContainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/FrameContainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/TextView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/TextView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/LinearContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/LinearContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/TextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/Context.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/data/code_gen/ReplaceText.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/TextView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/model/ViewGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/model/ViewGroup.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/values/codetest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/values/codetest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -256,7 +258,8 @@
       <workItem from="1736027556284" duration="500000" />
       <workItem from="1736028067254" duration="5647000" />
       <workItem from="1736033725133" duration="721000" />
-      <workItem from="1736072555551" duration="3766000" />
+      <workItem from="1736072555551" duration="4089000" />
+      <workItem from="1736081862748" duration="1444000" />
     </task>
     <task id="LOCAL-00001" summary="optimisation getText">
       <created>1732392209684</created>
