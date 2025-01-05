@@ -35,6 +35,14 @@ public class Label extends ViewGroup {
         return label;
     }
 
+    public String getText() {
+        return label.getText();
+    }
+
+    public void setText(String text) {
+        label.setText(text);
+    }
+
     public Label(String text) {
         this.text = text;
     }

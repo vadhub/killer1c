@@ -3,14 +3,15 @@ package org.example.data;
 import org.example.api.Inflater;
 import org.example.data.file_handler.ReadFile;
 import org.example.model.Button;
-import org.example.model.*;
 import org.example.model.Label;
+import org.example.model.*;
 import org.example.model.manifest.Manifest;
+import org.example.model.topbar.Item;
 import org.simpleframework.xml.core.Persister;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.FileReader;
 import java.io.Reader;
 import java.io.StringReader;
@@ -26,11 +27,20 @@ public class LayoutInflater implements Inflater {
         frame.dispose();
     }
 
-    public void inflate(String xml, String pathProject) throws Exception {
-        Reader reader = new StringReader(xml);
+    public ViewGroup inflateView(File xml) throws Exception {
+        Reader reader = new FileReader(xml);
         Persister serializer = new Persister();
-        ViewGroup viewGroup = deserializeViewGroup(ReadFile.readRoot(new StringReader(xml)), serializer, reader);
-        frame = createRoot(viewGroup);
+        return deserializeViewGroup(ReadFile.readRoot(new FileReader(xml)), serializer, reader);
+    }
+
+    public ViewGroup inflateView(String xml) throws Exception {
+        Reader reader = new FileReader(xml);
+        Persister serializer = new Persister();
+        return deserializeViewGroup(ReadFile.readRoot(new StringReader(xml)), serializer, reader);
+    }
+
+    public void inflate(String xml, String pathProject) throws Exception {
+        frame = createRoot(new File("values/res"));
         frame.setVisible(true);
     }
 
@@ -40,7 +50,6 @@ public class LayoutInflater implements Inflater {
         } else if (rootContainer.equals("LinearContainer")){
             return serializer.read(LinearContainer.class, reader, false);
         }
-
         return serializer.read(FrameContainer.class, reader, false);
     }
 
@@ -81,28 +90,46 @@ public class LayoutInflater implements Inflater {
         return manager;
     }
 
-    public JFrame createRoot(ViewGroup root) throws Exception {
+    public JTabbedPane createTabs(File resDirectory, List<Item> items) throws Exception {
+        JTabbedPane tabPanel = new JTabbedPane();
+        if (resDirectory.isDirectory()) {
+            File[] files = resDirectory.listFiles();
+
+            if (files != null) {
+                for (int i = 0; i < files.length; i++) {
+                    if (files[i].isFile()) {
+                        System.out.println("Чтение файла: " + files[i].getName());
+                        ViewGroup viewGroup = inflateView(files[i]);
+                        tabPanel.add(items.get(i).name, createViews(viewGroup.views, viewGroup));
+                        System.out.println(ReadFile.read(files[i].getPath()));
+                    }
+                }
+            } else {
+                System.out.println("Ошибка: не удалось получить список файлов.");
+            }
+        } else {
+            System.out.println("Указанный путь не является директорией.");
+        }
+        return tabPanel;
+    }
+
+    public JFrame createRoot(File res) throws Exception {
         Persister serializer = new Persister();
         Manifest manifest =  serializer.read(Manifest.class, new FileReader("values/manifest.xml"), false);
-        JFrame frame;
-        frame = new JFrame(manifest.name);
+        JFrame frame = new JFrame(manifest.name);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        if (root.width != null && root.height != null) {
-            if ("match_parent".equals(root.width) && "match_parent".equals(root.height)) {
+        if (manifest.width != null && manifest.height != null) {
+            if ("match_parent".equals(manifest.width) && "match_parent".equals(manifest.height)) {
                 frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
             } else {
-                int frameWidth = Integer.parseInt(root.width);
-                int frameHeight = Integer.parseInt(root.height);
+                int frameWidth = Integer.parseInt(manifest.width);
+                int frameHeight = Integer.parseInt(manifest.height);
                 frame.setSize(frameWidth, frameHeight);
                 frame.setLocationRelativeTo(null);
             }
         }
 
-        if (root instanceof FrameContainer frameContainer1) {
-            frame.add(createViews(root.views, root), frameContainer1.getPosition());
-        } else if (root instanceof LinearContainer) {
-            frame.add(createViews(root.views, root));
-        }
+        frame.add(createTabs(res, manifest.topbar.bars));
         return frame;
     }
 

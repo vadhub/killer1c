@@ -1,2 +1,6 @@
-<Manifest name="1c killer">
+<Manifest name="1c killer" width="500" height="500">
+    <Topbar>
+        <Item name="screen_1"/>
+        <Item name="screen_2"/>
+    </Topbar>
 </Manifest>
