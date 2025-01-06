@@ -7,8 +7,9 @@ Main functions:
 - interface generation based on database tables
 
 what's ready:
-- creating an interface
 - bind interface with java code like android sdk
+- create interface for screens from files.xml
+- manifest for settings app
 
 Result of genereted XML code:
 ![result](https://github.com/vadhub/killer1c/blob/main/result.png)
